@@ -1,0 +1,71 @@
+  Model Name:	MacBook Pro
+  Model Identifier:	MacBookPro14,3
+  Processor Name:	Intel Core i7
+  Processor Speed:	3.1 GHz
+  Number of Processors:	1
+  Total Number of Cores:	4
+  L2 Cache (per Core):	256 KB
+  L3 Cache:	8 MB
+  Memory:	16 GB
+  System Version:	macOS 10.12.6 (16G29)
+  Kernel Version:	Darwin 16.7.0
+
+
+BenchmarkPrecompiledEcrecover/-Gas=3000-8         	   50000	    185022 ns/op
+BenchmarkPrecompiledSha256/128-Gas=108-8          	10000000	       728 ns/op
+BenchmarkPrecompiledRipeMD/128-Gas=1080-8         	 3000000	      2116 ns/op
+BenchmarkPrecompiledIdentity/128-Gas=27-8         	500000000	        20.0 ns/op
+BenchmarkPrecompiledModExp/eip_example1-Gas=2611-8         	  200000	     37256 ns/op
+BenchmarkPrecompiledModExp/eip_example2-Gas=2611-8         	 1000000	      8308 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-square-Gas=40-8      	 3000000	      3183 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-qube-Gas=40-8        	 2000000	      3844 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-pow0x10001-Gas=655-8 	  500000	     15398 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-square-Gas=133-8     	 2000000	      4800 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-qube-Gas=133-8       	 1000000	      6550 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-pow0x10001-Gas=2129-8         	  200000	     31756 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-square-Gas=378-8              	 1000000	      8166 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-qube-Gas=378-8                	  500000	     15420 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-pow0x10001-Gas=6062-8         	  100000	     91049 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-square-Gas=1116-8             	  300000	     22666 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-qube-Gas=1116-8               	  200000	     48616 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-pow0x10001-Gas=17858-8        	   20000	    334805 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-square-Gas=3573-8             	  100000	     72269 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-qube-Gas=3573-8               	   50000	    122522 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-pow0x10001-Gas=57180-8        	   10000	    791423 ns/op
+BenchmarkPrecompiledBn256Add/chfast1-Gas=500-8                      	  200000	     65233 ns/op
+BenchmarkPrecompiledBn256Add/chfast2-Gas=500-8                      	  100000	     60019 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio1-Gas=500-8                     	 5000000	      1579 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio2-Gas=500-8                     	 5000000	      1565 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio3-Gas=500-8                     	 5000000	      1545 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio4-Gas=500-8                     	 5000000	      1523 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio5-Gas=500-8                     	 5000000	      1463 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio6-Gas=500-8                     	 5000000	      1552 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio7-Gas=500-8                     	 5000000	      1580 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio8-Gas=500-8                     	 5000000	      1623 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio9-Gas=500-8                     	 5000000	      1565 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio10-Gas=500-8                    	 5000000	      1634 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio11-Gas=500-8                    	 1000000	      7005 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio12-Gas=500-8                    	 1000000	      7139 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio13-Gas=500-8                    	  200000	     46273 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio14-Gas=500-8                    	 1000000	      6717 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast1-Gas=2000-8               	   20000	    479836 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast2-Gas=2000-8               	    3000	   1891149 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast3-Gas=2000-8               	    5000	   1839665 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff1-Gas=260000-8                 	     500	  19712015 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff2-Gas=260000-8                 	     300	  19661290 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff3-Gas=260000-8                 	     300	  19946803 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff4-Gas=340000-8                 	     300	  25342430 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff5-Gas=340000-8                 	     300	  24692591 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff6-Gas=260000-8                 	     500	  19853770 ns/op
+BenchmarkPrecompiledBn256Pairing/empty_data-Gas=100000-8            	    5000	   1637240 ns/op
+BenchmarkPrecompiledBn256Pairing/one_point-Gas=180000-8             	     500	  14025579 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_2-Gas=260000-8     	    1000	  11552115 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_3-Gas=260000-8     	     500	  19220277 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_4-Gas=260000-8     	     300	  19088014 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_1-Gas=900000-8     	     200	  51894330 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_2-Gas=900000-8     	     100	  61992980 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_3-Gas=260000-8     	     500	  19563190 ns/op
+PASS
+ok  	_/Users/tim.siwula/Dropbox/Projects/go-ethereum/core/vm	508.788s
+
+
