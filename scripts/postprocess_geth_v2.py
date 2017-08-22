@@ -127,7 +127,7 @@ ok      github.com/ethereum/go-ethereum/core/vm 521.513s
     postprocess(t)
 
 if __name__ == '__main__':
-    test()
+    #test()
 
     if len(sys.argv) < 2:
         print("usage : postprocess_geth <file>")
