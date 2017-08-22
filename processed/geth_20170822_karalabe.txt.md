@@ -59,8 +59,8 @@ PrecompiledBn256Pairing/ten_point_match_3     260000       2.10154e+07    12.371
 
 Columns
 
-    * `MGas/S` - Shows what MGas per second was measured on that machine at that time
-    * `Gasprice for 10MGas/S` shows what the gasprice should have been, in order to reach 10 MGas/second
-    * `Gas/Ideal percent` shows how the gas should be adjusted, in order to reach 10 MGas/second
-    * `VS Ecdsa` shows a factor by which the gascost should be multiplied, in order to reach the same G/S as `ecRecover`
+* `MGas/S` - Shows what MGas per second was measured on that machine at that time
+* `Gasprice for 10MGas/S` shows what the gasprice should have been, in order to reach 10 MGas/second
+* `Gas/Ideal percent` shows how the gas should be adjusted, in order to reach 10 MGas/second
+* `VS Ecdsa` shows a factor by which the gascost should be multiplied, in order to reach the same G/S as `ecRecover`
     
