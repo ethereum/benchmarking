@@ -1,0 +1,74 @@
+August 23rd *** macbook *** results:
+
+➜  vm git:(master) ✗ go test -bench BenchmarkPrecompiled -benchtime 5s
+BenchmarkPrecompiledEcrecover/-Gas=3000-8         	   50000	    144319 ns/op
+BenchmarkPrecompiledSha256/128-Gas=108-8          	20000000	       578 ns/op
+BenchmarkPrecompiledRipeMD/128-Gas=1080-8         	 5000000	      1662 ns/op
+BenchmarkPrecompiledIdentity/128-Gas=27-8         	500000000	        15.3 ns/op
+BenchmarkPrecompiledModExp/eip_example1-Gas=2611-8         	  300000	     29852 ns/op
+BenchmarkPrecompiledModExp/eip_example2-Gas=2611-8         	 1000000	      7569 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-square-Gas=40-8      	 3000000	      2236 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-qube-Gas=40-8        	 3000000	      2997 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-pow0x10001-Gas=655-8 	  500000	     11987 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-square-Gas=133-8     	 2000000	      3717 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-qube-Gas=133-8       	 1000000	      5468 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-pow0x10001-Gas=2129-8         	  300000	     28191 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-square-Gas=378-8              	 1000000	      7345 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-qube-Gas=378-8                	  500000	     12177 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-pow0x10001-Gas=6062-8         	  100000	     69323 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-square-Gas=1116-8             	  500000	     15967 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-qube-Gas=1116-8               	  200000	     30117 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-pow0x10001-Gas=17858-8        	   50000	    187924 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-square-Gas=3573-8             	  200000	     39178 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-qube-Gas=3573-8               	  100000	     81914 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-pow0x10001-Gas=57180-8        	   10000	    564070 ns/op
+BenchmarkPrecompiledBn256Add/chfast1-Gas=500-8                      	  200000	     40977 ns/op
+BenchmarkPrecompiledBn256Add/chfast2-Gas=500-8                      	  200000	     43206 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio1-Gas=500-8                     	 5000000	      1332 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio2-Gas=500-8                     	 5000000	      1365 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio3-Gas=500-8                     	 5000000	      1361 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio4-Gas=500-8                     	 5000000	      1393 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio5-Gas=500-8                     	 5000000	      1337 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio6-Gas=500-8                     	 5000000	      1442 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio7-Gas=500-8                     	 5000000	      1449 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio8-Gas=500-8                     	 5000000	      1474 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio9-Gas=500-8                     	 5000000	      1454 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio10-Gas=500-8                    	 5000000	      1452 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio11-Gas=500-8                    	 1000000	      6221 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio12-Gas=500-8                    	 1000000	      6182 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio13-Gas=500-8                    	  200000	     40954 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio14-Gas=500-8                    	 1000000	      6039 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast1-Gas=2000-8               	   20000	    420845 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast2-Gas=2000-8               	    5000	   1634706 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast3-Gas=2000-8               	    5000	   1612314 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff1-Gas=260000-8                 	     500	  17302458 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff2-Gas=260000-8                 	     500	  17160573 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff3-Gas=260000-8                 	     500	  17041258 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff4-Gas=340000-8                 	     300	  21977570 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff5-Gas=340000-8                 	     300	  21854866 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff6-Gas=260000-8                 	     500	  17257593 ns/op
+BenchmarkPrecompiledBn256Pairing/empty_data-Gas=100000-8            	    5000	   1451992 ns/op
+BenchmarkPrecompiledBn256Pairing/one_point-Gas=180000-8             	     500	  11918127 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_2-Gas=260000-8     	    1000	  10355579 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_3-Gas=260000-8     	     500	  16730228 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_4-Gas=260000-8     	     500	  16751615 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_1-Gas=900000-8     	     200	  45620049 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_2-Gas=900000-8     	     100	  53389117 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_3-Gas=260000-8     	     500	  16783709 ns/op
+PASS
+ok  	_/Users/tim.siwula/Dropbox/Projects/go-ethereum/core/vm	478.468s
+➜  vm git:(master) ✗ git rev-parse HEAD
+3c48a25762dfab9382791c33a2f5832466077ac3
+
+Ran on:
+Model Name:	MacBook Pro
+Model Identifier:	MacBookPro14,3
+Processor Name:	Intel Core i7
+Processor Speed:	3.1 GHz
+Number of Processors:	1
+Total Number of Cores:	4
+L2 Cache (per Core):	256 KB
+L3 Cache:	8 MB
+Memory:	16 GB
+System Version:	macOS 10.12.6 (16G29)
+Kernel Version:	Darwin 16.7.0
