@@ -1,0 +1,39 @@
+Model Name:	MacBook Pro
+Model Identifier:	MacBookPro14,3
+Processor Name:	Intel Core i7
+Processor Speed:	3.1 GHz
+Number of Processors:	1
+Total Number of Cores:	4
+L2 Cache (per Core):	256 KB
+L3 Cache:	8 MB
+Memory:	16 GB
+System Version:	macOS 10.12.6 (16G29)
+Kernel Version:	Darwin 16.7.0
+
+
+
+➜  go-ethereum git:(master) git rev-parse HEAD
+8d6a5a3581ce6221786eb464bfef7e8c31e7ad95
+➜  go-ethereum git:(master) cd core/vm
+➜  vm git:(master) go test -bench BenchmarkPrecompiled -benchtime 5s
+BenchmarkPrecompiledEcdsa-8      	   50000	    153764 ns/op
+BenchmarkPrecompiledSha256-8     	^[^[^C%                                                                                                                                                                                               ➜  vm git:(master) go test -bench BenchmarkPrecompiled -benchtime 5s
+BenchmarkPrecompiledEcdsa-8      	   50000	    159277 ns/op
+BenchmarkPrecompiledSha256-8     	10000000	       637 ns/op
+BenchmarkPrecompiledRipeMD-8     	 3000000	      1982 ns/op
+BenchmarkPrecompiledIdentity-8   	500000000	        16.3 ns/op
+PASS
+ok  	github.com/ethereum/go-ethereum/core/vm	34.428s
+➜  vm git:(master) git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working tree clean
+➜  vm git:(master) go test -bench BenchmarkPrecompiled -benchtime 5s
+BenchmarkPrecompiledEcdsa-8      	   50000	    142948 ns/op
+BenchmarkPrecompiledSha256-8     	20000000	       605 ns/op
+BenchmarkPrecompiledRipeMD-8     	 5000000	      1806 ns/op
+BenchmarkPrecompiledIdentity-8   	500000000	        15.3 ns/op
+PASS
+ok  	github.com/ethereum/go-ethereum/core/vm	41.468s
+➜  vm git:(master)
