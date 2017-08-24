@@ -1,0 +1,277 @@
+This is information about the linux ubuntu server I am running.
+I believe it costs around ~$230/month.
+I am using free google credits I have =)
+If you would like me to get more specific information, reach out to me:
+gitter:	@tcsiwula
+email:	tcsiwula@gmail.com
+
+
+➜  ~ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.3 LTS"
+
+➜  ~ cat /etc/issue.net
+Ubuntu 16.04.3 LTS
+
+➜  ~ cat /etc/debian_version
+stretch/sid
+
+➜  ~ uname -a
+Linux high-memory-instance1-zone-us-west1a-260-per-month 4.4.0-92-generic #115-Ubuntu SMP Thu Aug 10 09:04:33 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+➜  ~ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.3 LTS
+Release:	16.04
+Codename:	xenial
+
+➜  ~ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+On-line CPU(s) list:   0-7
+Thread(s) per core:    2
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) CPU
+Stepping:              3
+CPU MHz:               2000.070
+BogoMIPS:              4000.14
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              56320K
+NUMA node0 CPU(s):     0-7
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms rtm avx512f rdseed adx clflushopt clwb avx512cd xsaveopt
+➜  ~
+➜  ~ cat /proc/cpuinfo | grep processor | wc -l
+8
+➜  ~ sudo lshw -class processor
+  *-cpu:0
+       description: CPU
+       product: Intel(R) Xeon(R) CPU
+       vendor: Intel Corp.
+       physical id: 401
+       bus info: cpu@0
+       slot: CPU 1
+       size: 2GHz
+       capacity: 2GHz
+       width: 64 bits
+       capabilities: fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp x86-64 constant_tsc rep_good nopl xtopology nonstop_tsc eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms rtm avx512f rdseed adx clflushopt clwb avx512cd xsaveopt
+  *-cpu:1
+       description: CPU
+       vendor: Google
+       physical id: 402
+       bus info: cpu@1
+       slot: CPU 2
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:2
+       description: CPU
+       vendor: Google
+       physical id: 403
+       bus info: cpu@2
+       slot: CPU 3
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:3
+       description: CPU
+       vendor: Google
+       physical id: 404
+       bus info: cpu@3
+       slot: CPU 4
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:4
+       description: CPU
+       vendor: Google
+       physical id: 405
+       bus info: cpu@4
+       slot: CPU 5
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:5
+       description: CPU
+       vendor: Google
+       physical id: 406
+       bus info: cpu@5
+       slot: CPU 6
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:6
+       description: CPU
+       vendor: Google
+       physical id: 407
+       bus info: cpu@6
+       slot: CPU 7
+       size: 2GHz
+       capacity: 2GHz
+  *-cpu:7
+       description: CPU
+       vendor: Google
+       physical id: 408
+       bus info: cpu@7
+       slot: CPU 8
+       size: 2GHz
+       capacity: 2GHz
+➜  ~
+➜  ~ sudo dmidecode -t 4
+# dmidecode 3.0
+Scanning /dev/mem for entry point.
+SMBIOS 2.4 present.
+
+Handle 0x0401, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 1
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0402, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 2
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0403, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 3
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0404, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 4
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0405, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 5
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0406, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 6
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0407, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 7
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+Handle 0x0408, DMI type 4, 32 bytes
+Processor Information
+	Socket Designation: CPU 8
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Google
+	ID: 53 06 05 00 FF FB 8B 1F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+	L1 Cache Handle: Not Provided
+	L2 Cache Handle: Not Provided
+	L3 Cache Handle: Not Provided
+
+➜  ~
