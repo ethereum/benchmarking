@@ -152,7 +152,7 @@ bench_bn256Pairing/ten_point_match_3: 11390441 ns
     postprocess(t)
 
 if __name__ == '__main__':
-    test()
+    #test()
 
     if len(sys.argv) < 2:
         print("usage : postprocess_geth <file>")
