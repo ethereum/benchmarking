@@ -1,0 +1,48 @@
+#cat /proc/cpuinfo | grep "model name" | head -n 1
+model name	: Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
+
+#cpupower -c 0 frequency-info | grep "CPU frequency"
+  current CPU frequency is 4.40 GHz.
+
+#taskset 0x1 test/testeth -t 'PrecompiledTests/bench*' -- --verbosity 1
+Running 4 test cases...
+Test Case "bench_ecrecover":
+bench_ecrecover/: 71564 ns
+Test Case "bench_bn256Add":
+bench_bn256Add/chfast1: 8963 ns
+bench_bn256Add/chfast2: 8878 ns
+bench_bn256Add/cdetrio1: 2563 ns
+bench_bn256Add/cdetrio2: 2523 ns
+bench_bn256Add/cdetrio3: 2583 ns
+bench_bn256Add/cdetrio4: 2504 ns
+bench_bn256Add/cdetrio5: 2555 ns
+bench_bn256Add/cdetrio6: 5329 ns
+bench_bn256Add/cdetrio7: 5309 ns
+bench_bn256Add/cdetrio8: 5285 ns
+bench_bn256Add/cdetrio9: 5315 ns
+bench_bn256Add/cdetrio10: 5341 ns
+bench_bn256Add/cdetrio11: 7998 ns
+bench_bn256Add/cdetrio12: 8161 ns
+bench_bn256Add/cdetrio13: 8907 ns
+bench_bn256Add/cdetrio14: 6999 ns
+Test Case "bench_bn256ScalarMul":
+bench_bn256ScalarMul/chfast1: 116363 ns
+bench_bn256ScalarMul/chfast2: 473376 ns
+bench_bn256ScalarMul/chfast3: 467461 ns
+Test Case "bench_bn256Pairing":
+bench_bn256Pairing/jeff1: 11924887 ns
+bench_bn256Pairing/jeff2: 11962861 ns
+bench_bn256Pairing/jeff3: 11912131 ns
+bench_bn256Pairing/jeff4: 16349548 ns
+bench_bn256Pairing/jeff5: 16337422 ns
+bench_bn256Pairing/jeff6: 11995622 ns
+bench_bn256Pairing/empty_data: 2693127 ns
+bench_bn256Pairing/one_point: 7457954 ns
+bench_bn256Pairing/two_point_match_2: 11636886 ns
+bench_bn256Pairing/two_point_match_3: 11897313 ns
+bench_bn256Pairing/two_point_match_4: 11994839 ns
+bench_bn256Pairing/ten_point_match_1: 47266190 ns
+bench_bn256Pairing/ten_point_match_2: 47570676 ns
+bench_bn256Pairing/ten_point_match_3: 11906689 ns
+
+*** No errors detected
