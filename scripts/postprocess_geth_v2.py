@@ -19,6 +19,9 @@ def postprocess(f):
     items = []
     lines = f.split("\n")
     #Do first pass and find the values for the ecdsarecover
+    idealMGasPerS = 10
+
+
     for l in lines:
         out = calc(l)
         if out:
@@ -33,21 +36,23 @@ def postprocess(f):
         if out:
             name = out['name']
             gas = out['gas']
-            time = out['ns']
-            gasPerNs = float(gas) / float(time)
-            MgasPerS = (1e+3*float(gas)) / float(time)
-            idealGasPrice = time / 100
+            timeNs = out['ns']
             
-            diff = 100 * gas / idealGasPrice
 
-            diff_compared_to_ecdsa = ecdsaMGperS/MgasPerS
+            timeS = timeNs * 1e-9
+            gasPerNs = float(gas) / float(timeNs)
+            gasPerS = 1e+9 * gasPerNs
+            MgasPerS = gasPerS / 1e+6
+            
+            forEcdsaGasPrice  = ecdsaMGperS * 1e6 * timeS
+            for10MGPSGasPrice = idealMGasPerS * 1e6 * timeS
 
 
-            item = [name, gas, "%14.02f" % float(time),  MgasPerS, idealGasPrice , "%.2f %%" % diff, "%.2f " % diff_compared_to_ecdsa]
-
+            item = [name, gas, "%14.02f" % float(timeNs),  MgasPerS, for10MGPSGasPrice , forEcdsaGasPrice]
+            #break
             items.append(item)
     print "```"
-    print tabulate(items, headers=['Name', 'Gascost', 'Time (ns)', 'MGas/S', 'Gasprice for 10MGas/S', "Gas/Ideal percent", "VS Ecdsa"])
+    print tabulate(items, headers=['Name', 'Gascost', 'Time (ns)', 'MGas/S', 'Gasprice for 10MGas/S','Gasprice for ECDSA eq'])
     print "```"
     print """
 Columns
@@ -127,7 +132,7 @@ ok      github.com/ethereum/go-ethereum/core/vm 521.513s
     postprocess(t)
 
 if __name__ == '__main__':
-    #test()
+#    test()
 
     if len(sys.argv) < 2:
         print("usage : postprocess_geth <file>")
