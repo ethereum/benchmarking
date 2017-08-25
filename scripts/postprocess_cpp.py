@@ -66,7 +66,6 @@ def postprocess(f):
     for l in lines:
         out = calc(l)
         if out:
-            print out['name']
             if out['name'].find("ecrecover/") >= 0:
                 ecdsaMGperS = 1000* out['gas']/out['ns']
                 #print("Ecdsarecover at %f Mgas/s" %  ecdsaMGperS ) 
