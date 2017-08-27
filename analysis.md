@@ -53,26 +53,11 @@ PrecompiledModExp/nagydani-1-qube                 40    3844              10.405
 PrecompiledModExp/nagydani-1-qube                 40    3242              12.3381                     32.42              61.3102
 PrecompiledModExp/nagydani-1-qube                 40    2997              13.3467                     29.97              62.2995
 PrecompiledModExp/nagydani-1-qube                 40    4393               9.10539                    43.93              64.2533
-modexp_1_pow0x10001                               40   69577               0.574903                  695.77            1458.94
+modexp_1_qube                                     40   12746               3.13824                   127.46             267.268
+
 ```
 For ecdsa-equivalence, the gasCost for `modExp` should be adjusted by 1.5, so `nagydani-1-qube` costs ~60. Note, though, that `modExp` seems fairly variable, and ranged in `MGas/S` from e.g. `9 - 66`, depending on input vector. 
 
-However, it should be noted here that Parity is stands out - and displays a very high variance in `MGas/S` costs for `modexp`. 
-
-Example values: 
-
-```
-modexp_1_pow0x10001         40   69577               0.574903                      695.77                1458.94
-modexp_1_qube               40   12746               3.13824                       127.46                 267.268
-modexp_1_square            655    9005              72.7374                         90.05                 188.824
-modexp_2_pow0x10001        133  178520               0.745015                     1785.2                 3743.34
-modexp_2_qube              133   30359               4.38091                       303.59                 636.59
-modexp_2_square           2129   20965             101.55                          209.65                 439.61
-modexp_3_pow0x10001        378  524879               0.720166                     5248.79               11006.1
-modexp_3_qube              378   89207               4.23734                       892.07                1870.56
-modexp_3_square           6062   60163             100.76                          601.63                1261.54
-```
-This should be investigated asap.  
 
 
 # Scalar multiplication
