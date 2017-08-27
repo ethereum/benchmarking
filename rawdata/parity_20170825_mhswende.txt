@@ -1,0 +1,30 @@
+#cat /proc/cpuinfo | grep "model name"| head
+model name	: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
+
+     Running /data/workspace/parity/target/release/deps/evm-738e2c687970dbef
+
+running 20 tests
+test bn_128_add          ... bench:      11,291 ns/iter (+/- 390)
+test bn_128_mul          ... bench:     683,165 ns/iter (+/- 24,812)
+test bn_128_pairing      ... bench:   7,500,475 ns/iter (+/- 214,431)
+test ecrecover           ... bench:     143,070 ns/iter (+/- 4,080)
+test modexp_1_pow0x10001 ... bench:      69,577 ns/iter (+/- 4,967)
+test modexp_1_qube       ... bench:      12,746 ns/iter (+/- 343)
+test modexp_1_square     ... bench:       9,005 ns/iter (+/- 417)
+test modexp_2_pow0x10001 ... bench:     178,520 ns/iter (+/- 7,649)
+test modexp_2_qube       ... bench:      30,359 ns/iter (+/- 1,987)
+test modexp_2_square     ... bench:      20,965 ns/iter (+/- 951)
+test modexp_3_pow0x10001 ... bench:     524,879 ns/iter (+/- 12,167)
+test modexp_3_qube       ... bench:      89,207 ns/iter (+/- 2,677)
+test modexp_3_square     ... bench:      60,163 ns/iter (+/- 1,230)
+test modexp_4_pow0x10001 ... bench:   1,664,471 ns/iter (+/- 109,330)
+test modexp_4_qube       ... bench:     279,185 ns/iter (+/- 10,925)
+test modexp_4_square     ... bench:     188,611 ns/iter (+/- 2,883)
+test modexp_5_pow0x10001 ... bench:   5,685,696 ns/iter (+/- 213,275)
+test modexp_5_qube       ... bench:     951,783 ns/iter (+/- 31,612)
+test modexp_5_square     ... bench:     641,167 ns/iter (+/- 15,356)
+test sha256              ... bench:       1,443 ns/iter (+/- 74)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 20 measured; 0 filtered out
+
+
