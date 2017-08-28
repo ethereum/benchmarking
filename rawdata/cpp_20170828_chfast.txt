@@ -1,0 +1,86 @@
+#cat /proc/cpuinfo | grep "model name" | head -n 1
+model name	: Intel(R) Core(TM) i7-6820HK CPU @ 2.70GHz
+
+#sudo cpupower -c 0 frequency-set -g performance
+
+#cpupower -c 0 frequency-info | grep "CPU frequency"
+  current CPU frequency: 3.59 GHz (asserted by call to kernel)
+
+#taskset 0x1 test/testeth -t 'PrecompiledTests/bench*'
+
+#sudo cpupower -c 0 frequency-set -g powersave
+
+Running 5 test cases...
+Test Case "bench_ecrecover":
+bench_ecrecover/: 88110 ns
+Test Case "bench_modexp":
+bench_modexp/eip_example1: 217802 ns
+bench_modexp/eip_example2: 19047 ns
+bench_modexp/nagydani-1-square: 16671 ns
+bench_modexp/nagydani-1-qube: 18555 ns
+bench_modexp/nagydani-1-pow0x10001: 32145 ns
+bench_modexp/nagydani-2-square: 37338 ns
+bench_modexp/nagydani-2-qube: 39624 ns
+bench_modexp/nagydani-2-pow0x10001: 82141 ns
+bench_modexp/nagydani-3-square: 90508 ns
+bench_modexp/nagydani-3-qube: 99380 ns
+bench_modexp/nagydani-3-pow0x10001: 234354 ns
+bench_modexp/nagydani-4-square: 229119 ns
+bench_modexp/nagydani-4-qube: 258763 ns
+bench_modexp/nagydani-4-pow0x10001: 692261 ns
+bench_modexp/nagydani-5-square: 609520 ns
+bench_modexp/nagydani-5-qube: 706821 ns
+bench_modexp/nagydani-5-pow0x10001: 2033423 ns
+Test Case "bench_bn256Add":
+bench_bn256Add/chfast1: 10521 ns
+bench_bn256Add/chfast2: 10469 ns
+bench_bn256Add/cdetrio1: 2968 ns
+bench_bn256Add/cdetrio2: 2938 ns
+bench_bn256Add/cdetrio3: 2961 ns
+bench_bn256Add/cdetrio4: 2902 ns
+bench_bn256Add/cdetrio5: 2942 ns
+bench_bn256Add/cdetrio6: 6234 ns
+bench_bn256Add/cdetrio7: 6230 ns
+bench_bn256Add/cdetrio8: 6654 ns
+bench_bn256Add/cdetrio9: 7075 ns
+bench_bn256Add/cdetrio10: 7137 ns
+bench_bn256Add/cdetrio11: 10624 ns
+bench_bn256Add/cdetrio12: 10755 ns
+bench_bn256Add/cdetrio13: 11879 ns
+bench_bn256Add/cdetrio14: 8418 ns
+Test Case "bench_bn256ScalarMul":
+bench_bn256ScalarMul/chfast1: 132643 ns
+bench_bn256ScalarMul/chfast2: 561792 ns
+bench_bn256ScalarMul/chfast3: 552138 ns
+bench_bn256ScalarMul/cdetrio1: 889773 ns
+bench_bn256ScalarMul/cdetrio2: 533102 ns
+bench_bn256ScalarMul/cdetrio3: 153622 ns
+bench_bn256ScalarMul/cdetrio4: 11291 ns
+bench_bn256ScalarMul/cdetrio5: 5568 ns
+bench_bn256ScalarMul/cdetrio6: 925953 ns
+bench_bn256ScalarMul/cdetrio7: 537926 ns
+bench_bn256ScalarMul/cdetrio8: 152987 ns
+bench_bn256ScalarMul/cdetrio9: 10746 ns
+bench_bn256ScalarMul/cdetrio10: 5837 ns
+bench_bn256ScalarMul/cdetrio11: 893199 ns
+bench_bn256ScalarMul/cdetrio12: 533286 ns
+bench_bn256ScalarMul/cdetrio13: 154918 ns
+bench_bn256ScalarMul/cdetrio14: 11947 ns
+bench_bn256ScalarMul/cdetrio15: 5998 ns
+Test Case "bench_bn256Pairing":
+bench_bn256Pairing/jeff1: 16730620 ns
+bench_bn256Pairing/jeff2: 16807463 ns
+bench_bn256Pairing/jeff3: 16835003 ns
+bench_bn256Pairing/jeff4: 20851651 ns
+bench_bn256Pairing/jeff5: 20439304 ns
+bench_bn256Pairing/jeff6: 14853103 ns
+bench_bn256Pairing/empty_data: 3025382 ns
+bench_bn256Pairing/one_point: 9379535 ns
+bench_bn256Pairing/two_point_match_2: 15795089 ns
+bench_bn256Pairing/two_point_match_3: 16827825 ns
+bench_bn256Pairing/two_point_match_4: 16819238 ns
+bench_bn256Pairing/ten_point_match_1: 59029420 ns
+bench_bn256Pairing/ten_point_match_2: 65031223 ns
+bench_bn256Pairing/ten_point_match_3: 15187585 ns
+
+*** No errors detected

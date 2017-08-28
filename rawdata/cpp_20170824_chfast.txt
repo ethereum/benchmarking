@@ -1,10 +1,15 @@
 #cat /proc/cpuinfo | grep "model name" | head -n 1
 model name	: Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz
 
+#sudo cpupower -c 0 frequency-set -g performance
+
 #cpupower -c 0 frequency-info | grep "CPU frequency"
   current CPU frequency is 4.40 GHz.
 
 #taskset 0x1 test/testeth -t 'PrecompiledTests/bench*' -- --verbosity 1
+
+#sudo cpupower -c 0 frequency-set -g powersave
+
 Running 4 test cases...
 Test Case "bench_ecrecover":
 bench_ecrecover/: 70528 ns
