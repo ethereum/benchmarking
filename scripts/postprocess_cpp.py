@@ -9,25 +9,6 @@ precompiledRegexp = re.compile("bench_(.*): ([\d]+) ns")
 def getGas(precompile):
     gasLookupTable = {
         "ecrecover/" :3000 , 
-        "bn256Add/chfast1" : 500 , 
-        "bn256Add/chfast2" :500 , 
-        "bn256Add/cdetrio1" : 500 , 
-        "bn256Add/cdetrio2" : 500 , 
-        "bn256Add/cdetrio3" : 500 , 
-        "bn256Add/cdetrio4" : 500 , 
-        "bn256Add/cdetrio5" : 500 , 
-        "bn256Add/cdetrio6" : 500 , 
-        "bn256Add/cdetrio7" : 500 , 
-        "bn256Add/cdetrio8" : 500 , 
-        "bn256Add/cdetrio9" : 500 , 
-        "bn256Add/cdetrio10" : 500 , 
-        "bn256Add/cdetrio11" : 500 , 
-        "bn256Add/cdetrio12" : 500 , 
-        "bn256Add/cdetrio13" : 500 , 
-        "bn256Add/cdetrio14" : 500 , 
-        "bn256ScalarMul/chfast1" : 2000 , 
-        "bn256ScalarMul/chfast2" : 2000 , 
-        "bn256ScalarMul/chfast3" : 2000 , 
         "bn256Pairing/jeff1" : 260000 , 
         "bn256Pairing/jeff2" : 260000 , 
         "bn256Pairing/jeff3" : 260000 , 
@@ -42,7 +23,37 @@ def getGas(precompile):
         "bn256Pairing/ten_point_match_1" :900000 , 
         "bn256Pairing/ten_point_match_2" :900000 , 
         "bn256Pairing/ten_point_match_3" :260000 , 
+        "bn256Pairing/jeff1-Gas" : 260000,
+        "bn256Pairing/jeff2-Gas" : 260000,
+        "bn256Pairing/jeff3-Gas" : 260000,
+        "bn256Pairing/jeff4-Gas" : 340000,
+        "bn256Pairing/jeff5-Gas" : 340000,
+        "bn256Pairing/jeff6-Gas" : 260000,
+        "bn256Pairing/empty_data-Gas" : 100000,
+        "bn256Pairing/one_point-Gas" : 180000,
+        "modexp/eip_example1" :2611 , 
+        "modexp/eip_example2" :2611 , 
+        "modexp/nagydani-1-square" : 40,
+        "modexp/nagydani-1-qube" : 40,
+        "modexp/nagydani-1-pow0x10001" : 655,
+        "modexp/nagydani-2-square" : 133,
+        "modexp/nagydani-2-qube" : 133,
+        "modexp/nagydani-2-pow0x10001" : 2129,
+        "modexp/nagydani-3-square" : 378,
+        "modexp/nagydani-3-qube" : 378,
+        "modexp/nagydani-3-pow0x10001" : 6062,
+        "modexp/nagydani-4-square" : 1116,
+        "modexp/nagydani-4-qube" : 1116,
+        "modexp/nagydani-4-pow0x10001" : 17858,
+        "modexp/nagydani-5-square" : 3573,
+        "modexp/nagydani-5-qube" : 3573,
+        "modexp/nagydani-5-pow0x10001" : 57180        ,
     }
+    if precompile.find("bn256ScalarMul") == 0:
+        return 2000
+    if precompile.find("bn256Add") == 0:
+        return 500
+
     if precompile in gasLookupTable.keys():
         return gasLookupTable[precompile]
 
