@@ -1,0 +1,67 @@
+[user@work vm]$ cat /proc/cpuinfo | grep "model name"| head
+model name	: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+
+
+[user@work vm]$ go test -bench BenchmarkPrecompiled -benchtime 5s
+goos: linux
+goarch: amd64
+pkg: github.com/ethereum/go-ethereum/core/vm
+BenchmarkPrecompiledEcrecover/-Gas=3000-2         	   50000	    159077 ns/op
+BenchmarkPrecompiledSha256/128-Gas=108-2          	10000000	       639 ns/op
+BenchmarkPrecompiledRipeMD/128-Gas=1080-2         	 3000000	      2030 ns/op
+BenchmarkPrecompiledIdentity/128-Gas=27-2         	500000000	        17.2 ns/op
+BenchmarkPrecompiledModExp/eip_example1-Gas=13056-2         	  200000	     34735 ns/op
+BenchmarkPrecompiledModExp/eip_example2-Gas=13056-2         	 1000000	      7713 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-square-Gas=204-2      	 3000000	      2590 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-qube-Gas=204-2        	 2000000	      3357 ns/op
+BenchmarkPrecompiledModExp/nagydani-1-pow0x10001-Gas=3276-2 	  500000	     13991 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-square-Gas=665-2      	 2000000	      4215 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-qube-Gas=665-2        	 1000000	      6248 ns/op
+BenchmarkPrecompiledModExp/nagydani-2-pow0x10001-Gas=10649-2         	  200000	     31272 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-square-Gas=1894-2              	 1000000	      7558 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-qube-Gas=1894-2                	  500000	     12706 ns/op
+BenchmarkPrecompiledModExp/nagydani-3-pow0x10001-Gas=30310-2         	  100000	     78718 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-square-Gas=5580-2              	  500000	     18090 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-qube-Gas=5580-2                	  200000	     36116 ns/op
+BenchmarkPrecompiledModExp/nagydani-4-pow0x10001-Gas=89292-2         	   30000	    207740 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-square-Gas=17868-2             	  200000	     45934 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-qube-Gas=17868-2               	  100000	     99434 ns/op
+BenchmarkPrecompiledModExp/nagydani-5-pow0x10001-Gas=285900-2        	   10000	    659933 ns/op
+BenchmarkPrecompiledBn256Add/chfast1-Gas=500-2                       	  500000	     14068 ns/op
+BenchmarkPrecompiledBn256Add/chfast2-Gas=500-2                       	  500000	     14136 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio1-Gas=500-2                      	10000000	      1032 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio2-Gas=500-2                      	10000000	      1110 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio3-Gas=500-2                      	 5000000	      1189 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio4-Gas=500-2                      	10000000	      1135 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio5-Gas=500-2                      	10000000	      1199 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio6-Gas=500-2                      	 5000000	      1417 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio7-Gas=500-2                      	 5000000	      1495 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio8-Gas=500-2                      	 5000000	      1552 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio9-Gas=500-2                      	 5000000	      1611 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio10-Gas=500-2                     	 5000000	      1440 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio11-Gas=500-2                     	  500000	     14456 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio12-Gas=500-2                     	  500000	     14485 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio13-Gas=500-2                     	  500000	     14315 ns/op
+BenchmarkPrecompiledBn256Add/cdetrio14-Gas=500-2                     	 3000000	      2164 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast1-Gas=40000-2               	  100000	     97875 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast2-Gas=40000-2               	  100000	    105280 ns/op
+BenchmarkPrecompiledBn256ScalarMul/chfast3-Gas=40000-2               	  100000	    101911 ns/op
+BenchmarkPrecompiledBn256ScalarMul/cdetrio1-Gas=40000-2              	  100000	    108458 ns/op
+BenchmarkPrecompiledBn256ScalarMul/cdetrio6-Gas=40000-2              	  100000	    107855 ns/op
+BenchmarkPrecompiledBn256ScalarMul/cdetrio11-Gas=40000-2             	  100000	    108114 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff1-Gas=260000-2                  	    2000	   3259099 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff2-Gas=260000-2                  	    2000	   3203017 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff3-Gas=260000-2                  	    2000	   3230769 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff4-Gas=340000-2                  	    2000	   4320089 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff5-Gas=340000-2                  	    2000	   4314707 ns/op
+BenchmarkPrecompiledBn256Pairing/jeff6-Gas=260000-2                  	    2000	   3250827 ns/op
+BenchmarkPrecompiledBn256Pairing/empty_data-Gas=100000-2             	   10000	   1027267 ns/op
+BenchmarkPrecompiledBn256Pairing/one_point-Gas=180000-2              	    3000	   2130905 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_2-Gas=260000-2      	    2000	   3183844 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_3-Gas=260000-2      	    2000	   3181564 ns/op
+BenchmarkPrecompiledBn256Pairing/two_point_match_4-Gas=260000-2      	    2000	   3222494 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_1-Gas=900000-2      	    1000	  11762181 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_2-Gas=900000-2      	    1000	  11861035 ns/op
+BenchmarkPrecompiledBn256Pairing/ten_point_match_3-Gas=260000-2      	    2000	   3186670 ns/op
+PASS
+ok  	github.com/ethereum/go-ethereum/core/vm	510.099s
