@@ -87,30 +87,17 @@ Parity, at `9388ns` versus `3357`.
 * For `Pairing`, the actual cost was `900K`, and the two results are `962K` and `2.1M` respectively. This indicates that the pairing precompile is already _underpriced_ on Parity. A `900K` input vector took `11ms` on Geth, but `93ms` on Parity. 
 
 
+## Summary
 
+In the chart below, 
 
+* `#1` means the first (hardware-dependant) measure against `10Mgas/s` on my local laptop. 
+* `#2` means the second measure, relative against `ecrecover`. 
 
+| Precompile | Cost (now) | Geth #1| Parity #1 | Geth #2 | Parity #2|  
+| --- | --- | --- | --- | --- | --- |
+| Modexp | 204 | 33.57 | 93.88 | 63.31 | 206.83| 
+| ecAdd  | 500 | 144.85 | 168.94 |273.17 |372.21 | 
+| ecMul  | 40K | 1.0K | 7.5K | 2.0 K | 16.5K|
+| Pairing | 900K | 118.6K | 963.0K | 223.7K| 2.1M | 
 
-
-
-
-
-| Name | Gascost | Time (ns) | MGas/S | Gasprice for 10MGas/S | Gasprice for ECDSA eq |
-|--------|-------- |  --------- | ------ |  --------------------| --------------------- |
-|modexp_1_qube    | 40      | 12746      | 3.13824        | 127.46   | 267.268 |
-|bn_128_add       | 500     | 11291      | 44.2831        | 112.91   | 236.758 |
-|bn_128_mul       | 2000     | 683165    | 2.92755        | 6831.65  | 14325.1 |
-|bn_128_pairing   | 1 (n/a)     | 7.50048e+06  | 0.000133325    | 75004.8  | 157276 |
-|ecrecover        | 3000     | 143070    | 20.9688        | 1430.7   | 3000 |
-|sha256           | 3132     | 1443      | 2170.48        | 14.43    | 30.2579 |
-
-In these benchmarks, we don't have the gascost for the pairing. 
-
-* For `modexp`, it should actually be increased quite a lot. There's a comment on the [old analysis](https://github.com/ethereum/benchmarking/blob/master/analysis.md):
-
-> Parity does exponentiation by squaring currently, but plan to optimize it 
-> Note2 : CPP seems extremely slow on nagydany-1-qube.
-
-* For `Bn256Add`, the actual cost `500`, results `112` and `236` respectively. Suggests halving the cost.
-* For `ScalarMul`, actual cost `2000`. I am not sure that accurately represents what eventually was decided to use for costs. Any help from parity in determining what the input vectors are and the true gas costs for these would be appreciated. 
-* For `Pairing` -- we don't have the actual cost -- help would be appreciated.  
