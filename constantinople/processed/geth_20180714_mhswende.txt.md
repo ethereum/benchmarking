@@ -1,68 +1,66 @@
-```
-Name                                         Gascost         Time (ns)     MGas/S    Gasprice for 10MGas/S    Gasprice for ECDSA eq
------------------------------------------  ---------  ----------------  ---------  -----------------------  -----------------------
-PrecompiledEcrecover/                           3000  159077              18.8588                 1590.77               3000
-PrecompiledSha256/128                            108     639             169.014                     6.39                 12.0508
-PrecompiledRipeMD/128                           1080    2030             532.02                     20.3                  38.2833
-PrecompiledIdentity/128                           27      17.2          1569.77                      0.172                 0.324371
-PrecompiledModExp/eip_example1                 13056   34735             375.874                   347.35                655.06
-PrecompiledModExp/eip_example2                 13056    7713            1692.73                     77.13                145.458
-PrecompiledModExp/nagydani-1-square              204    2590              78.7645                   25.9                  48.8443
-PrecompiledModExp/nagydani-1-qube                204    3357              60.7685                   33.57                 63.309
-PrecompiledModExp/nagydani-1-pow0x10001         3276   13991             234.151                   139.91                263.853
-PrecompiledModExp/nagydani-2-square              665    4215             157.77                     42.15                 79.4898
-PrecompiledModExp/nagydani-2-qube                665    6248             106.434                    62.48                117.83
-PrecompiledModExp/nagydani-2-pow0x10001        10649   31272             340.528                   312.72                589.752
-PrecompiledModExp/nagydani-3-square             1894    7558             250.595                    75.58                142.535
-PrecompiledModExp/nagydani-3-qube               1894   12706             149.063                   127.06                239.62
-PrecompiledModExp/nagydani-3-pow0x10001        30310   78718             385.045                   787.18               1484.53
-PrecompiledModExp/nagydani-4-square             5580   18090             308.458                   180.9                 341.156
-PrecompiledModExp/nagydani-4-qube               5580   36116             154.502                   361.16                681.104
-PrecompiledModExp/nagydani-4-pow0x10001        89292  207740             429.826                  2077.4                3917.73
-PrecompiledModExp/nagydani-5-square            17868   45934             388.993                   459.34                866.26
-PrecompiledModExp/nagydani-5-qube              17868   99434             179.697                   994.34               1875.21
-PrecompiledModExp/nagydani-5-pow0x10001       285900  659933             433.226                  6599.33              12445.5
-PrecompiledBn256Add/chfast1                      500   14068              35.5417                  140.68                265.305
-PrecompiledBn256Add/chfast2                      500   14136              35.3707                  141.36                266.588
-PrecompiledBn256Add/cdetrio1                     500    1032             484.496                    10.32                 19.4623
-PrecompiledBn256Add/cdetrio2                     500    1110             450.45                     11.1                  20.9333
-PrecompiledBn256Add/cdetrio3                     500    1189             420.521                    11.89                 22.4231
-PrecompiledBn256Add/cdetrio4                     500    1135             440.529                    11.35                 21.4047
-PrecompiledBn256Add/cdetrio5                     500    1199             417.014                    11.99                 22.6117
-PrecompiledBn256Add/cdetrio6                     500    1417             352.858                    14.17                 26.7229
-PrecompiledBn256Add/cdetrio7                     500    1495             334.448                    14.95                 28.1939
-PrecompiledBn256Add/cdetrio8                     500    1552             322.165                    15.52                 29.2688
-PrecompiledBn256Add/cdetrio9                     500    1611             310.366                    16.11                 30.3815
-PrecompiledBn256Add/cdetrio10                    500    1440             347.222                    14.4                  27.1567
-PrecompiledBn256Add/cdetrio11                    500   14456              34.5877                  144.56                272.623
-PrecompiledBn256Add/cdetrio12                    500   14485              34.5185                  144.85                273.17
-PrecompiledBn256Add/cdetrio13                    500   14315              34.9284                  143.15                269.964
-PrecompiledBn256Add/cdetrio14                    500    2164             231.054                    21.64                 40.8104
-PrecompiledBn256ScalarMul/chfast1              40000   97875             408.685                   978.75               1845.8
-PrecompiledBn256ScalarMul/chfast2              40000  105280             379.939                  1052.8                1985.45
-PrecompiledBn256ScalarMul/chfast3              40000  101911             392.499                  1019.11               1921.92
-PrecompiledBn256ScalarMul/cdetrio1             40000  108458             368.806                  1084.58               2045.39
-PrecompiledBn256ScalarMul/cdetrio6             40000  107855             370.868                  1078.55               2034.01
-PrecompiledBn256ScalarMul/cdetrio11            40000  108114             369.98                   1081.14               2038.9
-PrecompiledBn256Pairing/jeff1                 260000       3.2591e+06     79.7766                32591                 61462.7
-PrecompiledBn256Pairing/jeff2                 260000       3.20302e+06    81.1735                32030.2               60405
-PrecompiledBn256Pairing/jeff3                 260000       3.23077e+06    80.4762                32307.7               60928.4
-PrecompiledBn256Pairing/jeff4                 340000       4.32009e+06    78.7021                43200.9               81471.7
-PrecompiledBn256Pairing/jeff5                 340000       4.31471e+06    78.8003                43147.1               81370.2
-PrecompiledBn256Pairing/jeff6                 260000       3.25083e+06    79.9796                32508.3               61306.7
-PrecompiledBn256Pairing/empty_data            100000       1.02727e+06    97.3457                10272.7               19373
-PrecompiledBn256Pairing/one_point             180000       2.13090e+06    84.4712                21309.1               40186.3
-PrecompiledBn256Pairing/two_point_match_2     260000       3.18384e+06    81.6623                31838.4               60043.5
-PrecompiledBn256Pairing/two_point_match_3     260000       3.18156e+06    81.7208                31815.6               60000.5
-PrecompiledBn256Pairing/two_point_match_4     260000       3.22249e+06    80.6828                32224.9               60772.3
-PrecompiledBn256Pairing/ten_point_match_1     900000       1.17622e+07    76.5164               117622                221821
-PrecompiledBn256Pairing/ten_point_match_2     900000       1.1861e+07     75.8787               118610                223685
-PrecompiledBn256Pairing/ten_point_match_3     260000       3.18667e+06    81.5899                31866.7               60096.7
-```
+| Name | Gascost | Time (ns) | MGas/S | Gascost for 10MGas/S | Gascost for ECDSA eq |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| PrecompiledEcrecover/ | 3000.0 |      159077.00 | 18.8587916544 | 1590.77 | 3000.0 |
+| PrecompiledSha256/128 | 108.0 |         639.00 | 169.014084507 | 6.39 | 12.0507678671 |
+| PrecompiledRipeMD/128 | 1080.0 |        2030.00 | 532.019704433 | 20.3 | 38.2833470583 |
+| PrecompiledIdentity/128 | 27.0 |          17.20 | 1569.76744186 | 0.172 | 0.324371216455 |
+| PrecompiledModExp/eip_example1 | 13056.0 |       34735.00 | 375.874478192 | 347.35 | 655.060128114 |
+| PrecompiledModExp/eip_example2 | 13056.0 |        7713.00 | 1692.72656554 | 77.13 | 145.45786003 |
+| PrecompiledModExp/nagydani-1-square | 204.0 |        2590.00 | 78.7644787645 | 25.9 | 48.8442703848 |
+| PrecompiledModExp/nagydani-1-qube | 204.0 |        3357.00 | 60.7685433423 | 33.57 | 63.3089635837 |
+| PrecompiledModExp/nagydani-1-pow0x10001 | 3276.0 |       13991.00 | 234.150525338 | 139.91 | 263.853354036 |
+| PrecompiledModExp/nagydani-2-square | 665.0 |        4215.00 | 157.769869514 | 42.15 | 79.4898068231 |
+| PrecompiledModExp/nagydani-2-qube | 665.0 |        6248.00 | 106.434058899 | 62.48 | 117.829730256 |
+| PrecompiledModExp/nagydani-2-pow0x10001 | 10649.0 |       31272.00 | 340.528268099 | 312.72 | 589.752132615 |
+| PrecompiledModExp/nagydani-3-square | 1894.0 |        7558.00 | 250.595395607 | 75.58 | 142.534747324 |
+| PrecompiledModExp/nagydani-3-qube | 1894.0 |       12706.00 | 149.063434598 | 127.06 | 239.61980676 |
+| PrecompiledModExp/nagydani-3-pow0x10001 | 30310.0 |       78718.00 | 385.045351762 | 787.18 | 1484.52636145 |
+| PrecompiledModExp/nagydani-4-square | 5580.0 |       18090.00 | 308.457711443 | 180.9 | 341.155541027 |
+| PrecompiledModExp/nagydani-4-qube | 5580.0 |       36116.00 | 154.502159708 | 361.16 | 681.104119389 |
+| PrecompiledModExp/nagydani-4-pow0x10001 | 89292.0 |      207740.00 | 429.825743718 | 2077.4 | 3917.72537828 |
+| PrecompiledModExp/nagydani-5-square | 17868.0 |       45934.00 | 388.992902861 | 459.34 | 866.259735851 |
+| PrecompiledModExp/nagydani-5-qube | 17868.0 |       99434.00 | 179.697085504 | 994.34 | 1875.20508936 |
+| PrecompiledModExp/nagydani-5-pow0x10001 | 285900.0 |      659933.00 | 433.225797164 | 6599.33 | 12445.5389528 |
+| PrecompiledBn256Add/chfast1 | 500.0 |       14068.00 | 35.5416548194 | 140.68 | 265.305480993 |
+| PrecompiledBn256Add/chfast2 | 500.0 |       14136.00 | 35.3706847765 | 141.36 | 266.587878826 |
+| PrecompiledBn256Add/cdetrio1 | 500.0 |        1032.00 | 484.496124031 | 10.32 | 19.4622729873 |
+| PrecompiledBn256Add/cdetrio2 | 500.0 |        1110.00 | 450.45045045 | 11.1 | 20.9332587363 |
+| PrecompiledBn256Add/cdetrio3 | 500.0 |        1189.00 | 420.521446594 | 11.89 | 22.423103277 |
+| PrecompiledBn256Add/cdetrio4 | 500.0 |        1135.00 | 440.528634361 | 11.35 | 21.4047285277 |
+| PrecompiledBn256Add/cdetrio5 | 500.0 |        1199.00 | 417.014178482 | 11.99 | 22.6116911936 |
+| PrecompiledBn256Add/cdetrio6 | 500.0 |        1417.00 | 352.858151023 | 14.17 | 26.7229077742 |
+| PrecompiledBn256Add/cdetrio7 | 500.0 |        1495.00 | 334.448160535 | 14.95 | 28.1938935233 |
+| PrecompiledBn256Add/cdetrio8 | 500.0 |        1552.00 | 322.164948454 | 15.52 | 29.2688446476 |
+| PrecompiledBn256Add/cdetrio9 | 500.0 |        1611.00 | 310.366232154 | 16.11 | 30.3815133552 |
+| PrecompiledBn256Add/cdetrio10 | 500.0 |        1440.00 | 347.222222222 | 14.4 | 27.1566599823 |
+| PrecompiledBn256Add/cdetrio11 | 500.0 |       14456.00 | 34.5877144438 | 144.56 | 272.622692155 |
+| PrecompiledBn256Add/cdetrio12 | 500.0 |       14485.00 | 34.51846738 | 144.85 | 273.169597113 |
+| PrecompiledBn256Add/cdetrio13 | 500.0 |       14315.00 | 34.9283967866 | 143.15 | 269.963602532 |
+| PrecompiledBn256Add/cdetrio14 | 500.0 |        2164.00 | 231.053604436 | 21.64 | 40.81042514 |
+| PrecompiledBn256ScalarMul/chfast1 | 40000.0 |       97875.00 | 408.684546616 | 978.75 | 1845.80423317 |
+| PrecompiledBn256ScalarMul/chfast2 | 40000.0 |      105280.00 | 379.939209726 | 1052.8 | 1985.45358537 |
+| PrecompiledBn256ScalarMul/chfast3 | 40000.0 |      101911.00 | 392.499337657 | 1019.11 | 1921.91831629 |
+| PrecompiledBn256ScalarMul/cdetrio1 | 40000.0 |      108458.00 | 368.806358222 | 1084.58 | 2045.38682525 |
+| PrecompiledBn256ScalarMul/cdetrio6 | 40000.0 |      107855.00 | 370.868295397 | 1078.55 | 2034.01497388 |
+| PrecompiledBn256ScalarMul/cdetrio11 | 40000.0 |      108114.00 | 369.979836099 | 1081.14 | 2038.89940092 |
+| PrecompiledBn256Pairing/jeff1 | 260000.0 |     3259099.00 | 79.7766499269 | 32590.99 | 61462.6690219 |
+| PrecompiledBn256Pairing/jeff2 | 260000.0 |     3203017.00 | 81.1734686391 | 32030.17 | 60405.0302684 |
+| PrecompiledBn256Pairing/jeff3 | 260000.0 |     3230769.00 | 80.4761962245 | 32307.69 | 60928.3994544 |
+| PrecompiledBn256Pairing/jeff4 | 340000.0 |     4320089.00 | 78.7020822951 | 43200.89 | 81471.6583793 |
+| PrecompiledBn256Pairing/jeff5 | 340000.0 |     4314707.00 | 78.8002522535 | 43147.07 | 81370.1603626 |
+| PrecompiledBn256Pairing/jeff6 | 260000.0 |     3250827.00 | 79.9796482557 | 32508.27 | 61306.6690974 |
+| PrecompiledBn256Pairing/empty_data | 100000.0 |     1027267.00 | 97.345675467 | 10272.67 | 19373.0143264 |
+| PrecompiledBn256Pairing/one_point | 180000.0 |     2130905.00 | 84.4711519284 | 21309.05 | 40186.2934302 |
+| PrecompiledBn256Pairing/two_point_match_2 | 260000.0 |     3183844.00 | 81.6622924993 | 31838.44 | 60043.450656 |
+| PrecompiledBn256Pairing/two_point_match_3 | 260000.0 |     3181564.00 | 81.7208140399 | 31815.64 | 60000.452611 |
+| PrecompiledBn256Pairing/two_point_match_4 | 260000.0 |     3222494.00 | 80.6828499913 | 32224.94 | 60772.3429534 |
+| PrecompiledBn256Pairing/ten_point_match_1 | 900000.0 |    11762181.00 | 76.5164215718 | 117621.81 | 221820.52088 |
+| PrecompiledBn256Pairing/ten_point_match_2 | 900000.0 |    11861035.00 | 75.8787070437 | 118610.35 | 223684.78787 |
+| PrecompiledBn256Pairing/ten_point_match_3 | 260000.0 |     3186670.00 | 81.5898728139 | 31866.7 | 60096.7456012 |
 
 Columns
 
 * `MGas/S` - Shows what MGas per second was measured on that machine at that time
-* `Gasprice for 10MGas/S` shows what the gasprice should have been, in order to reach 10 MGas/second
-* `Gasprice for ECDSA eq` shows what the gasprice should have been, in order to have the same cost/cycle as ecRecover
+* `Gascost for 10MGas/S` shows what the gascost should have been, in order to reach 10 MGas/second
+* `Gascost for ECDSA eq` shows what the gascost should have been, in order to have the same cost/cycle as ecRecover
     

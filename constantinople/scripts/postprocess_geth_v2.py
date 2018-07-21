@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys, re
-from tabulate import tabulate
 
 
 precompiledRegexp = re.compile("Benchmark(Precompiled.*)-Gas=([\d]+)\S+\s+\d+\s+([\d\.]+) ns\/op") 
@@ -13,6 +12,12 @@ def calc(line):
         if m:
             (name, gas, ns) = ( m.group(1), m.group(2), m.group(3))
             return {"name" : name, "gas": float(gas), "ns" : float(ns)}
+
+def tabulate(items, headers):
+    print "| %s |" % " | ".join(headers)
+    print "| %s |" % " | ".join(["-----" for x in headers])
+    for item in items:
+        print "| %s |" %" | ".join([ str(x) for x in item])
 
 
 def postprocess(f):
@@ -51,15 +56,13 @@ def postprocess(f):
             item = [name, gas, "%14.02f" % float(timeNs),  MgasPerS, for10MGPSGasPrice , forEcdsaGasPrice]
             #break
             items.append(item)
-    print "```"
-    print tabulate(items, headers=['Name', 'Gascost', 'Time (ns)', 'MGas/S', 'Gasprice for 10MGas/S','Gasprice for ECDSA eq'])
-    print "```"
+    tabulate(items, headers=['Name', 'Gascost', 'Time (ns)', 'MGas/S', 'Gascost for 10MGas/S','Gascost for ECDSA eq'])
     print """
 Columns
 
 * `MGas/S` - Shows what MGas per second was measured on that machine at that time
-* `Gasprice for 10MGas/S` shows what the gasprice should have been, in order to reach 10 MGas/second
-* `Gasprice for ECDSA eq` shows what the gasprice should have been, in order to have the same cost/cycle as ecRecover
+* `Gascost for 10MGas/S` shows what the gascost should have been, in order to reach 10 MGas/second
+* `Gascost for ECDSA eq` shows what the gascost should have been, in order to have the same cost/cycle as ecRecover
     """
 
 def test():

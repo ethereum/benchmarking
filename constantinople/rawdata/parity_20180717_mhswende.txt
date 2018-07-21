@@ -1,9 +1,0 @@
-
-     Running target/release/deps/evm-32c3ff794892b8e9
-
-running 4 tests
-test bn_128_mul     ... bench:     709,905 ns/iter (+/- 223,458)
-test bn_128_pairing ... bench:   7,273,317 ns/iter (+/- 956,445)
-test ecrecover      ... bench:     153,535 ns/iter (+/- 36,858)
-test sha256         ... bench:         949 ns/iter (+/- 134)
-
