@@ -12,9 +12,12 @@ def parse_line(line):
     splitted = line.split(',')
     benchmark = splitted[0]
     name = splitted[1]
+    nominalGasCost = splitted[2]
+    memGcOps = splitted[5]
+    memAllocOps = splitted[6]
     time_ns = int(float(splitted[4]))
     # example line: PointEvaluationBenchmark,fuzzcorp-33,50000,3,1260260.546875,512,185
-    return (benchmark, name, time_ns)
+    return (benchmark, name, nominalGasCost, memGcOps, memAllocOps, time_ns)
 
 
 def compare_with_ecrecover(f):
@@ -25,19 +28,19 @@ def compare_with_ecrecover(f):
     # first pass to find the values for the ecdsarecover
     for line in lines[5:]:
         if len(line) > 0:
-            (_benchmark, name, time_ns) = parse_line(line)
+            (_benchmark, name, nominalGasCost, memGcOps, memAllocOps, time_ns) = parse_line(line)
             if name == ECRECOVER_TEST_NAME:
                 ecdsa_gas_cost_per_second = (BILLION * ECRECOVER_GAS_COST) / time_ns
 
     # benchamrk results start from line 6
     for line in lines[5:]:
         if len(line) > 0:
-            (benchmark, name, time) = parse_line(line)
-            ecdsa_equivalent = (ecdsa_gas_cost_per_second * time) / BILLION
-            item = [benchmark, name, time, ecdsa_equivalent]
+            (benchmark, name, nominalGasCost, memGcOps, memAllocOps, time_ns) = parse_line(line)
+            ecdsa_equivalent = (ecdsa_gas_cost_per_second * time_ns) / BILLION
+            item = [benchmark, name, nominalGasCost, time_ns, memGcOps, memAllocOps, ecdsa_equivalent]
             items.append(item)
     print("```")
-    print(tabulate(items, headers=['Benchmark', 'Name', 'Time (ns)', 'Gasprice for ECDSA eq']))
+    print(tabulate(items, headers=['Benchmark', 'Name', 'Nominal Gas Cost', 'Time (ns)', 'GC Ops', 'Mem Alloc Ops', 'Gas Cost for ECDSA eq']))
     print("```")
     print("""
 Columns

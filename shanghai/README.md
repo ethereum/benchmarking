@@ -34,44 +34,58 @@
 
 ### Direct execution
 
-| Benchmark | Test Name | Nominal Gas Cost | Time (ns) | Memory Allocations per Op | Gascost for ECDSA eq |
-| ----- | ----- | -----: | -----: | -----: | -----: |
-| Blake2fBenchmark | input_param_scalar_1_gas_1.csv | 1 | 52.41 | 88 | 1.72 |
-| Bn256AddBenchmark | input_param_scalar_0_gas_150.csv | 150 | 3061.68 | 88 | 101.805 |
-| Bn256MulBenchmark | input_param_scalar_0_gas_6000.csv | 6000 | 136026.80 | 88 | 4524.05 |
-| Bn256PairingBenchmark | input_param_scalar_1_gas_79000.csv | 79000 | 1871716.66 | 273 | 62250.8 |
-| Bn256PairingBenchmark | input_param_scalar_2_gas_113000.csv | 113000 | 3226674.15 | 466 | 107315 |
-| Bn256PairingBenchmark | input_param_scalar_4_gas_181000.csv | 181000 | 5370053.12 | 851 | 178601 |
-| Bn256PairingBenchmark | input_param_scalar_8_gas_317000.csv | 317000 | 9814219.27 | 1622 | 326408 |
-| EcRecoverBenchmark | ValidKey | 3000 | 90202.16 | 424 | 3000.00 |
-| PointEvaluationBenchmark | fuzzcorp-33 | 50000 | 1297860.90 | 185 | 43165.1 |
-| PointEvaluationBenchmark | fuzzcorp-95 | 50000 | 1285252.86 | 185 | 42745.8 |
-| PointEvaluationBenchmark | pointEvaluation1 | 50000 | 1267637.89 | 185 | 42159.9 |
-| RipEmdBenchmark | input_param_scalar_0_gas_600.csv | 600 | 250.75 | 296 | 8.31467 |
-| RipEmdBenchmark | input_param_scalar_104_gas_1080.csv | 1080 | 487.21 | 424 | 16.197 |
-| RipEmdBenchmark | input_param_scalar_136_gas_1200.csv | 1200 | 682.23 | 456 | 22.6824 |
-| RipEmdBenchmark | input_param_scalar_256_gas_1560.csv | 1560 | 1103.55 | 576 | 36.6843 |
-| RipEmdBenchmark | input_param_scalar_56_gas_840.csv | 840 | 528.66 | 376 | 17.5606 |
-| RipEmdBenchmark | input_param_scalar_96_gas_960.csv | 960 | 578.34 | 416 | 19.2235 |
-| Sha256Benchmark | input_param_scalar_0_gas_60.csv | 60 | 200.62 | 112 | 6.65174 |
-| Sha256Benchmark | input_param_scalar_104_gas_108.csv | 108 | 252.48 | 240 | 8.38119 |
-| Sha256Benchmark | input_param_scalar_256_gas_156.csv | 156 | 393.02 | 392 | 13.0707 |
-
+| Benchmark | Test Name | Nominal Gas Cost | Time (ns) |GC Ops | Memory Allocations per Op | Gascost for ECDSA eq |
+| ----- | ----- | -----: | -----: | -----: | -----: | -----: |
+Blake2fBenchmark          | input_param_scalar_1_gas_1                        | 1           | 52  | 16777216               | 88                  | 1.72 |
+Bn256AddBenchmark         | input_param_scalar_0_gas_150                    | 150         | 3061    | 262144               | 88                | 101.80 |  
+Bn256MulBenchmark         | input_param_scalar_0_gas_6000                  | 6000       | 136026      | 4096               | 88               | 4524.05 | 
+Bn256PairingBenchmark     | input_param_scalar_1_gas_79000                | 45000      | 1871716       | 512              | 273              | 62250.80 | 
+Bn256PairingBenchmark     | input_param_scalar_2_gas_113000               | 45000      | 3226674       | 256              | 466             | 107315.00 |   
+Bn256PairingBenchmark     | input_param_scalar_4_gas_181000               | 45000      | 5370053       | 128              | 851             | 178601.00 |    
+Bn256PairingBenchmark     | input_param_scalar_8_gas_317000               | 45000      | 9814219        | 64             | 1622             | 326408.00 | 
+EcRecoverBenchmark        | ValidKey                                           | 3000        | 90202      | 8192              | 424               | 3000.00 |
+PointEvaluationBenchmark  | fuzzcorp-33                                       | 50000      | 1297860       | 512              | 185              | 43165.10 |
+PointEvaluationBenchmark  | fuzzcorp-95                                       | 50000      | 1285252       | 512              | 185              | 42745.80 |
+PointEvaluationBenchmark  | pointEvaluation1                                  | 50000      | 1267637       | 512              | 185              | 42159.90 |
+RipEmdBenchmark           | input_param_scalar_0_gas_600                    | 600          | 250   | 2097152              | 296                  | 8.31 |
+RipEmdBenchmark           | input_param_scalar_104_gas_1080                 | 600          | 487   | 1048576              | 424                 | 16.19 |
+RipEmdBenchmark           | input_param_scalar_136_gas_1200                 | 600          | 682   | 1048576              | 456                 | 22.68 |
+RipEmdBenchmark           | input_param_scalar_256_gas_1560                 | 600         | 1103    | 524288              | 576                 | 36.68 |
+RipEmdBenchmark           | input_param_scalar_56_gas_840                   | 600          | 528   | 2097152              | 376                 | 17.56 |
+RipEmdBenchmark           | input_param_scalar_96_gas_960                   | 600          | 578   | 1048576              | 416                 | 19.22 |
+Sha256Benchmark           | input_param_scalar_0_gas_60                      | 60          | 200   | 2097152              | 112                  | 6.65 |
+Sha256Benchmark           | input_param_scalar_104_gas_108                   | 60          | 252   | 2097152              | 240                  | 8.38 |
+Sha256Benchmark           | input_param_scalar_256_gas_156                   | 60          | 393   | 2097152              | 392                 | 13.07 |
 ### Bytecode execution
 
-| Benchmark | Test Name | Nominal Gas Cost | Time (ns) | Memory Allocations per Op | Gascost for ECDSA eq |
-| ----- | ----- | -----: | -----: | -----: | -----: |
-| Blake2fBenchmark | input_param_scalar_1_gas_1.csv | 1 | 91 | 89 | 2.71 |
-| Bn256AddBenchmark | input_param_scalar_0_gas_150.csv | 150 | 5116 | 95 | 152.74 |
-| Bn256MulBenchmark | input_param_scalar_0_gas_6000.csv | 6000 | 155326 | 95 | 4637.61 |
-| Bn256PairingBenchmark | input_param_scalar_1_gas_79000.csv | 79000 | 1871716 | 287 | 55884.35 |
-| Bn256PairingBenchmark | input_param_scalar_2_gas_113000.csv | 113000 | 3316654 | 469 | 99026.27 |
-| Bn256PairingBenchmark | input_param_scalar_4_gas_181000.csv | 181000 | 4899417 | 895 | 146283.27 |
-| Bn256PairingBenchmark | input_param_scalar_8_gas_317000.csv | 317000 | 7599560 | 1731 | 226902.20 |
-| EcRecoverBenchmark | ValidKey | 3000 | 100478 | 438 | 3000.00 |
-| PointEvaluationBenchmark | fuzzcorp-33 | 50000 | 30554 | 195 | 72688.15 |
-| PointEvaluationBenchmark | fuzzcorp-95 | 50000 | 31723 | 195 | 71989.78 |
-| PointEvaluationBenchmark | pointEvaluation1 | 50000 | 30599 | 195 | 60968.27 |
+| Benchmark | Test Name | Nominal Gas Cost | Time (ns) | GC Ops | Memory Allocations per Op | Gascost for ECDSA eq |
+| ----- | ----- | -----: | -----: | -----: |  -----: | -----: |
+Bn256AddBenchmark         | Bn256Add-Valid                   | 150        | 30066         | 1            | 39056                  | 769.60| 
+Bn256MulBenchmark         | Bn256Mul-Valid                  | 6000       | 199800         | 1            | 39056                 | 5114.33 | 
+Bn256PairingBenchmark     | Bn256Pairing-1                 | 79000      | 2073766         | 1            | 39488                | 53082.70| 
+Bn256PairingBenchmark     | Bn256Pairing-2                | 113000      | 2943733         | 1            | 40216                | 75351.50| 
+Bn256PairingBenchmark     | Bn256Pairing-4                | 181000      | 4791966         | 1            | 41648               | 122661.00| 
+Bn256PairingBenchmark     | Bn256Pairing-8                | 317000      | 8659133         | 1            | 44488               | 221650.00| 
+EcRecover                 | ValidKey                        | 3000       | 117200         | 1            | 39360               |   3000.00| 
+PointEvaluationBenchmark  | pointEvaluation1               | 50000      | 1551533         | 1            | 39408                | 39715.00| 
+
+## Benchmarking of precompiles for Erigon
+
+### Direct execution
+
+| Name | Gascost | Time (ns) | MGas/S | Gascost for 10MGas/S | Gascost for ECDSA eq |
+| ----- | -----: | -----: | -----: | -----: | -----: |
+| PointEvaluation/pointEvaluation1 | 50000 |     1145540.00 | 43.64 | 11455.4 | 58717.30 |
+| PointEvaluation/fuzzcorp-33 | 50000 |     164363.00 | 304.205 | 1643.63 | 8424.84 |
+| PointEvaluation/fuzzcorp-95 | 50000 |     164240.00 | 304.433| 1642.4 | 8418.53 |
+| PrecompiledSha256/128 | 108 |         526.1 | 205.284 | 12.5 | 26.96 |
+| PrecompiledRipeMD/128 | 1080 |         1250 | 864 | 7.91 | 64.07 |
+| PrecompiledIdentity/128 | 27 |          8.76 | 3081.84 |  0.08761 | 0.44 |
+| PrecompiledModExp/nagydani-1-qube | 204 |        1704 | 119.718 | 17.04 | 87.34 |
+| PrecompiledBn256Add/cdetrio12 | 150 |       11860 | 12.6476 | 118.6 | 607.91 |
+| PrecompiledBn256ScalarMul/cdetrio11 | 6000 |      85425 | 70.2371 | 854.25 | 4378.67 |
+| PrecompiledBn256Pairing/ten_point_match_1 | 385000 |    9107850 | 41.7641 | 92184.5 | 472515.00 |
+| PrecompiledBlake2F/vector_7 | 1 |    90.96 | 10.9938 |0.9096 | 4.66 |
 
 ## Conclusions
 
