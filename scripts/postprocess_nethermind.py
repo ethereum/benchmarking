@@ -40,7 +40,7 @@ def compare_with_ecrecover(f):
             item = [benchmark, name, nominalGasCost, time_ns, memGcOps, memAllocOps, ecdsa_equivalent]
             items.append(item)
     print("```")
-    print(tabulate(items, headers=['Benchmark', 'Name', 'Nominal Gas Cost', 'Time (ns)', 'GC Ops', 'Mem Alloc Ops', 'Gas Cost for ECDSA eq']))
+    print(tabulate(items, headers=['Benchmark', 'Name', 'Nominal Gas Cost', 'Time (ns)', 'GC Ops', 'Mem Alloc Ops', 'Gas Cost for ECDSA eq'], tablefmt="github", floatfmt=".2f"))
     print("```")
     print("""
 Columns
