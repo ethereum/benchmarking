@@ -1,5 +1,7 @@
 # Benchmark summary
 
+Please see [the specification](spec.md) for the details of how the results were obtained.
+
 ## Benchmarking of precompiles for Go Ethereum
 
 ### Direct execution
