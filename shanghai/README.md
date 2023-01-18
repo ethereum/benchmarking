@@ -104,16 +104,16 @@ Note : The benchmark method fails to correctly detect Garbage Collector operatio
 
 | Test Name | Time (ns) | Nominal Gas Cost | Bytes Alloc | Mem Alloc Ops |  Calculated Gas Cost  |
 | ----- | -----: | -----: | -----: | -----: | -----: |
-| Bn256Add/chfast1-Gas=150 | 13464 | 150 | 784 | 16 | 799.80 |
-| Bn256ScalarMul/chfast1-Gas=6000 |  242829 | 6000 | 1288 | 26 | 14424.91 |
-| Bn256Pairing/one_point-Gas=79000 | 1791231 | 79000 | 55328 | 501 | 106405.54 |
-| Bn256Pairing/jeff1-Gas=113000 |    7546857 | 113000 | 103952 | 980 | 448310.38 |
-| EcrecoverValidKey/ValidKey-Gas=3000 | 50502 | 3000 | 224 | 4 | 3000.00 |
-| PointEvaluationFail/fuzzcorp-33-Gas=50000 | 202165 | 50000 | 19908 | 143 | 12009.32 |
-| PointEvaluationFail/fuzzcorp-95-Gas=50000 | 674431 | 50000 | 19908 | 143 | 40063.62 |
-| PointEvaluation/pointEvaluation1-Gas=50000 |  1290697 | 50000 | 54864 | 352 | 76672.03 |
-| Sha256/128-Gas=108 | 545.7 | 108 | 32 | 1 | 32.41 |
-| RipeMD/128-Gas=1080 | 1075 | 1080 | 56 | 2 | 63.85 |
+| Bn256Add/chfast1 | 13464 | 150 | 784 | 16 | 799.80 |
+| Bn256ScalarMul/chfast1 |  242829 | 6000 | 1288 | 26 | 14424.91 |
+| Bn256Pairing/one_point | 1791231 | 79000 | 55328 | 501 | 106405.54 |
+| Bn256Pairing/jeff1 |    7546857 | 113000 | 103952 | 980 | 448310.38 |
+| EcrecoverValidKey/ValidKey | 50502 | 3000 | 224 | 4 | 3000.00 |
+| PointEvaluationFail/fuzzcorp-33 | 202165 | 50000 | 19908 | 143 | 12009.32 |
+| PointEvaluationFail/fuzzcorp-95 | 674431 | 50000 | 19908 | 143 | 40063.62 |
+| PointEvaluation/pointEvaluation1 |  1290697 | 50000 | 54864 | 352 | 76672.03 |
+| Sha256/128 | 545.7 | 108 | 32 | 1 | 32.41 |
+| RipeMD/128 | 1075 | 1080 | 56 | 2 | 63.85 |
 
 ### Bytecode execution
 
