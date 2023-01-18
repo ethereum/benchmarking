@@ -4,7 +4,9 @@ All executions were done on appropriate 4844 branches.
 
 ## Geth
 
-Using [eip-4844](https://github.com/mdehoog/go-ethereum/tree/eip-4844) branch
+Using [eip-4844](https://github.com/imapp-pl/go-ethereum/tree/eip-4844) branch.
+
+The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
 
 Direct
 ```
@@ -22,6 +24,8 @@ go test -bench=BenchmarkBytecodePrecompiled
 
 Using [precompile_benchmarks](https://github.com/imapp-pl/nethermind/tree/precompile_benchmarks) branch
 
+[BenchmarkDotNet](https://benchmarkdotnet.org/articles/overview.html) was used to get the benchmarks.
+
 Direct
 ```
 cd src/Nethermind/Nethermind.Benchmark.Runner
@@ -36,6 +40,8 @@ dotnet run -c Release -- -m precompilesBytecode
 
 ## Erigon
 Using [pointEvaluationBenchmark](https://github.com/imapp-pl/erigon/tree/pointEvaluationBenchmark) branch
+
+The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
 
 Direct
 ```
