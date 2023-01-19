@@ -39,7 +39,7 @@ Where possible we gathered stats on memory bytes allocated, memory allocation op
 
 ### Bytecode execution
 
-| Test Name | Time (ns) | Nominal Gas Costt | Bytes Alloc | Mem Alloc Ops | Calculated Gas Cost |
+| Test Name | Time (ns) | Nominal Gas Cost | Bytes Alloc | Mem Alloc Ops | Calculated Gas Cost |
 | ----- | -----: | -----: | -----: | -----: | -----: |
 | Bn256Add/Bn256Add-Valid              | 25702 | 150 | 7833 | 88 | 1091.99 |
 | Bn256Mul/Bn256Mul-Valid              | 94660 | 6000 | 8503 | 100 | 4021.80 |
@@ -117,7 +117,7 @@ Note : The benchmark method fails to correctly detect Garbage Collector operatio
 
 ### Bytecode execution
 
-| Test Name | Time (ns) | Nominal Gas Costt | Bytes Alloc | Mem Alloc Ops | Calculated Gas Cost |
+| Test Name | Time (ns) | Nominal Gas Cost | Bytes Alloc | Mem Alloc Ops | Calculated Gas Cost |
 | ----- | -----: | -----: | -----: | -----: | -----: |
 | Bn256Add/Bn256Add-Valid | 30550 | 150 | 5584 | 92 |  1,189.84  |
 | Bn256Mul/Bn256Mul-Valid | 135819 | 6000 | 6216 | 104 |  5,289.79  |
@@ -135,27 +135,50 @@ Note : The benchmark method fails to correctly detect Garbage Collector operatio
 | RipeMd/scalar_256 | 19706 | 1560 | 5337 | 79 |  767.50  |
 
 
+## Benchmarking of precompiles for Besu
+
+Note: Besu benchmarks were executed using stopwatch method. These results are more likely to be impacted by factors like warm-up, caching, memory management, etc. The future iterations will use more robust method like JMH (Java Microbenchmark Harness).
+
+### Bytecode execution
+
+| Test Name | Time (ns) | Nominal Gas Cost |  Calculated Gas Cost |
+| ----- | -----: | -----: | -----: |
+|  Bn256Add/Bn256Add-Valid  | 110211 | 150 | 1294.00  | 
+|  Bn256Mul/Bn256Mul-Valid  | 187487 | 6000 | 2201.30  | 
+|  Bn256Pairing/Bn256Pairing-1  | 1389150 | 79000 | 16310.13  | 
+|  Bn256Pairing/Bn256Pairing-2  | 1936933 | 113000 | 22741.70  | 
+|  Bn256Pairing/Bn256Pairing-4  | 3081944 | 181000 | 36185.37  | 
+|  Bn256Pairing/Bn256Pairing-8  | 5493774 | 317000 | 64502.87  | 
+|  EcRecover/ValidKey  | 255513 | 3000 | 3000.00  | 
+|  PointEvaluation/fuzzcorp-33  | 1670175 | 50000 | 19609.67  | 
+|  PointEvaluation/fuzzcorp-95  | 1629470 | 50000 | 19131.75  | 
+|  PointEvaluation/pointEvaluation1  | 1056739 | 50000 | 12407.26  | 
+|  Sha256/scalar_128  | 127921 | 108 | 1501.93  | 
+|  Sha256/scalar_256  | 113927 | 156 | 1337.63  | 
+|  RipeMd/scalar_128  | 150690 | 1080 | 1769.26  | 
+|  RipeMd/scalar_256  | 210298 | 1560 | 2469.13  | 
+
+
 # Client comparison
 
-This chart compares bytecode executions from different clients.
+This chart compares bytecode executions from different clients. In the client column, gas is calculated as relative to the client's Ec Recovery time.
 
-| Test | Nominal Gas Cost | Geth Time (ns) | Geth Gas | Nethermind Time (ns) | Nethermind Gas | Erigon Time (ns) | Erigon Gas | Besu Time (ns) | Besu Gas |
-| ----- | -----: | -----: | -----: | -----: | -----: | -----: | -----: | -----: | -----: |
- |  Bn256Add/Bn256Add-Valid              | 150 | 25702 | 1091.99 | 32566 | 796.88 | 30550 | 1189.84 |  |  | 
- |  Bn256Mul/Bn256Mul-Valid              | 6000 | 94660 | 4021.8 | 206333 | 5048.93 | 135819 | 5289.79 |  |  | 
- |  Bn256Pairing/Bn256Pairing-1          | 79000 | 1386028 | 58888.03 | 2029600 | 49663.95 | 1661813 | 64723.26 |  |  |  
- |  Bn256Pairing/Bn256Pairing-2          | 113000 | 2133691 | 90653.91 | 3083266 | 75446.97 | 2731387 | 106380.37 |  |  |  
- |  Bn256Pairing/Bn256Pairing-4          | 181000 | 3573289 | 151817.97 | 5062600 | 123880.91 | 4194409 | 163361.25 |  |  |  
- |  Bn256Pairing/Bn256Pairing-8          | 317000 | 6292710 | 267357.73 | 8395966 | 205447.78 | 8348450 | 325150.27 |  |  |  
- |  EcRecover/ValidKey                   | 3000 | 70610 | 3000 | 122600 | 3000 | 77027 | 3000.00 |  |  |  
- |  PointEvaluation/fuzzcorp-33          | 50000 | 168642 | 7165.07 | 1514400 | 37057.1 | 205447 | 8001.62 |  |  |  
- |  PointEvaluation/fuzzcorp-95          | 50000 | 169987 | 7222.22 | 1533866 | 37533.43 | 210143 | 8184.51 |  |  |  
- |  PointEvaluation/pointEvaluation1     | 50000 | 1023690 | 43493.41 | 1459833 | 35721.85 | 1293137 | 50364.30 |  |  |  
- |  RipeMd/scalar_128                    | 1080 | 13937 | 592.13 | 38233 | 935.55 | 16903 | 658.32 |  |  |  
- |  RipeMd/scalar_256                    | 1560 | 16455 | 699.12 | 44533 | 1089.71 | 19706 | 767.49 |  |  |  
- |  Sha256/scalar_128                    | 108 | 13660 | 580.37 | 40466 | 990.2 | 16919 | 658.95 |  |  |  
- |  Sha256/scalar_256                    | 156 | 15498 | 658.46 | 35833 | 876.83 | 18704 | 728.47 |  |  |  
-
+| Test | Nominal Gas Cost | Geth | Nethermind | Erigon | Besu |
+| ----- | -----: | -----: | -----: | -----: | -----: | 
+|  Bn256Add/Bn256Add-Valid              | 150 | 25,702 ns <br/> 1,091.99 gas | 32,566 ns <br/> 796.88 gas | 30,550 ns <br/> 1,189.84 gas | 110,211 ns <br/> 1,294.00 gas |  
+|  Bn256Mul/Bn256Mul-Valid              | 6000 | 94,660 ns <br/> 4,021.80 gas | 206,333 ns <br/> 5,048.93 gas | 135,819 ns <br/> 5,289.79 gas | 187,487 ns <br/> 2,201.30 gas |  
+|  Bn256Pairing/Bn256Pairing-1          | 79000 | 1,386,028 ns <br/> 58,888.03 gas | 2,029,600 ns <br/> 49,663.95 gas | 1,661,813 ns <br/> 64,723.26 gas | 1,389,150 ns <br/> 16,310.13 gas |  
+|  Bn256Pairing/Bn256Pairing-2          | 113000 | 2,133,691 ns <br/> 90,653.91 gas | 3,083,266 ns <br/> 75,446.97 gas | 2,731,387 ns <br/> 106,380.37 gas | 1,936,933 ns <br/> 22,741.70 gas |  
+|  Bn256Pairing/Bn256Pairing-4          | 181000 | 3,573,289 ns <br/> 151,817.97 gas | 5,062,600 ns <br/> 123,880.91 gas | 4,194,409 ns <br/> 163,361.25 gas | 3,081,944 ns <br/> 36,185.37 gas |  
+|  Bn256Pairing/Bn256Pairing-8          | 317000 | 6,292,710 ns <br/> 267,357.73 gas | 8,395,966 ns <br/> 20,5447.78 gas | 8,348,450 ns <br/> 325,150.27 gas | 5,493,774 ns <br/> 64,502.87 gas |  
+|  EcRecover/ValidKey                   | 3000 | 70,610 ns <br/> 3,000.00 gas | 122,600 ns <br/> 3,000.00 gas | 77,027 ns <br/> 3,000.00 gas | 255,513 ns <br/> 3,000.00 gas |  
+|  PointEvaluation/fuzzcorp-33          | 50000 | 168,642 ns <br/> 7,165.07 gas | 1,514,400 ns <br/> 37,057.10 gas | 205,447 ns <br/> 8,001.62 gas | 1,670,175 ns <br/> 19,609.67 gas |
+|  PointEvaluation/fuzzcorp-95          | 50000 | 169,987 ns <br/> 7,222.22 gas | 1,533,866 ns <br/> 37,533.43 gas | 210,143 ns <br/> 8,184.51 gas | 1,629,470 ns <br/> 19,131.75 gas |
+|  PointEvaluation/pointEvaluation1     | 50000 | 1,023,690 ns <br/> 43,493.41 gas | 1,459,833 ns <br/> 35,721.85 gas | 1,293,137 ns <br/> 50,364.30 gas | 1,056,739 ns <br/> 12,407.26 gas | 
+|  RipeMd/scalar_128                    | 1080 | 13,937 ns <br/> 592.13 gas | 38,233 ns <br/> 935.55 gas | 16,903 ns <br/> 658.32 gas | 12,7921 ns <br/> 1,501.93 gas | 
+|  RipeMd/scalar_256                    | 1560 | 16,455 ns <br/> 699.12 gas | 44,533 ns <br/> 1,089.71 gas | 19,706 ns <br/> 767.49 gas | 113,927 ns <br/> 1,337.63 gas |
+|  Sha256/scalar_128                    | 108 | 13,660 ns <br/> 580.37 gas | 40,466 ns <br/> 990.20 gas | 16,919 ns <br/> 658.95 gas | 150,690 ns <br/> 1,769.26 gas |  
+|  Sha256/scalar_256                    | 156 | 15,498 ns <br/> 658.46 gas | 35,833 ns <br/> 876.83 gas | 18,704 ns <br/> 728.47 gas | 210,298 ns <br/> 2,469.13 gas |  
 
 # Conclusions
 
