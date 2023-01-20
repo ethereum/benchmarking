@@ -49,6 +49,22 @@ cd core/vm
 go test -bench=.
 go test .\contracts_test.go -bench=.
 ```
+Bytecode
+```
+cd core/vm/runtime
+go test -bench=BenchmarkBytecodePrecompiled
+```
+
+## Besu
+Using [KZGpointEvalPrecompile](https://github.com/imapp-pl/besu/tree/KZGpointEvalPrecompile) branch
+
+
+Bytecode
+```
+./gradlew installDist
+cd ethereum/evmtool/src/test/benchmarks
+bash bench-precompiles.sh
+```
 
 # Bytecodes
 ## EcRecover

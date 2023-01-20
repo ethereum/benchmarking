@@ -170,12 +170,12 @@ This chart compares bytecode executions from different clients. In the client co
 |  Bn256Pairing/Bn256Pairing-1          | 79000 | 1,386,028 ns <br/> 58,888.03 gas | 2,029,600 ns <br/> 49,663.95 gas | 1,661,813 ns <br/> 64,723.26 gas | 1,389,150 ns <br/> 16,310.13 gas |  
 |  Bn256Pairing/Bn256Pairing-2          | 113000 | 2,133,691 ns <br/> 90,653.91 gas | 3,083,266 ns <br/> 75,446.97 gas | 2,731,387 ns <br/> 106,380.37 gas | 1,936,933 ns <br/> 22,741.70 gas |  
 |  Bn256Pairing/Bn256Pairing-4          | 181000 | 3,573,289 ns <br/> 151,817.97 gas | 5,062,600 ns <br/> 123,880.91 gas | 4,194,409 ns <br/> 163,361.25 gas | 3,081,944 ns <br/> 36,185.37 gas |  
-|  Bn256Pairing/Bn256Pairing-8          | 317000 | 6,292,710 ns <br/> 267,357.73 gas | 8,395,966 ns <br/> 20,5447.78 gas | 8,348,450 ns <br/> 325,150.27 gas | 5,493,774 ns <br/> 64,502.87 gas |  
+|  Bn256Pairing/Bn256Pairing-8          | 317000 | 6,292,710 ns <br/> 267,357.73 gas | 8,395,966 ns <br/> 205,447.78 gas | 8,348,450 ns <br/> 325,150.27 gas | 5,493,774 ns <br/> 64,502.87 gas |  
 |  EcRecover/ValidKey                   | 3000 | 70,610 ns <br/> 3,000.00 gas | 122,600 ns <br/> 3,000.00 gas | 77,027 ns <br/> 3,000.00 gas | 255,513 ns <br/> 3,000.00 gas |  
 |  PointEvaluation/fuzzcorp-33          | 50000 | 168,642 ns <br/> 7,165.07 gas | 1,514,400 ns <br/> 37,057.10 gas | 205,447 ns <br/> 8,001.62 gas | 1,670,175 ns <br/> 19,609.67 gas |
 |  PointEvaluation/fuzzcorp-95          | 50000 | 169,987 ns <br/> 7,222.22 gas | 1,533,866 ns <br/> 37,533.43 gas | 210,143 ns <br/> 8,184.51 gas | 1,629,470 ns <br/> 19,131.75 gas |
 |  PointEvaluation/pointEvaluation1     | 50000 | 1,023,690 ns <br/> 43,493.41 gas | 1,459,833 ns <br/> 35,721.85 gas | 1,293,137 ns <br/> 50,364.30 gas | 1,056,739 ns <br/> 12,407.26 gas | 
-|  RipeMd/scalar_128                    | 1080 | 13,937 ns <br/> 592.13 gas | 38,233 ns <br/> 935.55 gas | 16,903 ns <br/> 658.32 gas | 12,7921 ns <br/> 1,501.93 gas | 
+|  RipeMd/scalar_128                    | 1080 | 13,937 ns <br/> 592.13 gas | 38,233 ns <br/> 935.55 gas | 16,903 ns <br/> 658.32 gas | 127,921 ns <br/> 1,501.93 gas | 
 |  RipeMd/scalar_256                    | 1560 | 16,455 ns <br/> 699.12 gas | 44,533 ns <br/> 1,089.71 gas | 19,706 ns <br/> 767.49 gas | 113,927 ns <br/> 1,337.63 gas |
 |  Sha256/scalar_128                    | 108 | 13,660 ns <br/> 580.37 gas | 40,466 ns <br/> 990.20 gas | 16,919 ns <br/> 658.95 gas | 150,690 ns <br/> 1,769.26 gas |  
 |  Sha256/scalar_256                    | 156 | 15,498 ns <br/> 658.46 gas | 35,833 ns <br/> 876.83 gas | 18,704 ns <br/> 728.47 gas | 210,298 ns <br/> 2,469.13 gas |  
