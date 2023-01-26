@@ -4,7 +4,9 @@ All executions were done on appropriate 4844 branches.
 
 ## Geth
 
-Using [eip-4844](https://github.com/imapp-pl/go-ethereum/tree/eip-4844) branch.
+- Branch: [eip-4844](https://github.com/imapp-pl/go-ethereum/tree/eip-4844)
+- Commit: [2c3d1be](https://github.com/imapp-pl/go-ethereum/commit/2c3d1be5d6e7381b5c0b33a989a183b2fffb5b8c)
+- go-kzg: [5a63dd2](https://github.com/protolambda/go-kzg/commit/5a63dd26efb2ce99c807adb24a1aa9fe737e1a0c) 12 Dec 2022
 
 The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
 
@@ -22,7 +24,11 @@ go test -bench=BenchmarkBytecodePrecompiled
 
 ## Nethermind
 
-Using [precompile_benchmarks](https://github.com/imapp-pl/nethermind/tree/precompile_benchmarks) branch
+- Branch: [precompile_benchmarks](https://github.com/imapp-pl/nethermind/tree/precompile_benchmarks)
+- Commit: [2ba5ccc](https://github.com/imapp-pl/nethermind/commit/2ba5ccc99497d411d38ed86ca0dafd8af6a726d4)
+- Ckzg.Bindings: 0.1.1.57
+- c-kzg: [13f2a79](https://github.com/ethereum/c-kzg-4844/commit/13f2a79345cb8739c899253c6b0771f7e875f061) 25 Dec 2022
+
 
 [BenchmarkDotNet](https://benchmarkdotnet.org/articles/overview.html) was used to get the benchmarks.
 
@@ -39,7 +45,9 @@ dotnet run -c Release -- -m precompilesBytecode
 ```
 
 ## Erigon
-Using [pointEvaluationBenchmark](https://github.com/imapp-pl/erigon/tree/pointEvaluationBenchmark) branch
+- Branch: [pointEvaluationBenchmark](https://github.com/imapp-pl/erigon/tree/pointEvaluationBenchmark)
+- Commit: [c7c1894](https://github.com/imapp-pl/erigon/commit/c7c18940657d97ee3cfdb1702e2603aa6176594d)
+- go-kzg: [5a63dd2](https://github.com/protolambda/go-kzg/commit/5a63dd26efb2ce99c807adb24a1aa9fe737e1a0c) 12 Dec 2022
 
 The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
 
@@ -56,7 +64,9 @@ go test -bench=BenchmarkBytecodePrecompiled
 ```
 
 ## Besu
-Using [KZGpointEvalPrecompile](https://github.com/imapp-pl/besu/tree/KZGpointEvalPrecompile) branch
+- Branch: [KZGpointEvalPrecompile](https://github.com/imapp-pl/besu/tree/KZGpointEvalPrecompile)
+- Commit: [a74d39d](https://github.com/imapp-pl/besu/commit/a74d39d2e408074d3353725ac86fae33d193036a)
+- c-kzg: [03f5f1d](https://github.com/ethereum/c-kzg-4844/commit/03f5f1d5d063e4f28b554633ba54b8537f8c9de9) 6 Dec 2022
 
 
 Bytecode

@@ -2,7 +2,13 @@
 The benchmark tests were executed on the main EVM clients: Go Ethereum, Nethermind, Erigon and Besu.
 
 
-There are two main execution sets for each client: direct and bytecode. The direct approach calls a method to load the appropriate library and then executes it with the given parameters. The bytecode approach achieves the same but from the EVM machine. It executes the opcodes that load parameters to the EVM memory and then call the appropriate 'precompile'. That in turn calls a method to load the library and execute it with the given parameters. The effect of the two executions is the same, but with the bytecode approach we also count in any EVM machine overhead. The validity of the call parameters has been proved in unit tests, so there is no need to duplicate it in the benchmark tests.
+There are two execution methods for each client:
+- **direct**: This loads client's procedure responsible for executing precompile contract. For example in Go Ethereum / Erigon that is `vm.RunPrecompiledContract()` and in Nethermind it's `IPrecompile.Run()`. The procedure loads the appropriate library and then executes it with the given parameters.
+- **bytecode**: This executes the bytecode on client's EVM machine. The machine is set up to have a minimal overhead, in-memory state management and stripped-down chain data. The bytecode is made of opcodes to push required parameter values and then make a call to precompile contract address. At this point the EVM machine call client's procedure responsible for executing precompile contract, thus synching with **direct** method. The validity of the call parameters has been proven in unit tests, so there is no need to duplicate it in this benchmark tests.
+
+Both methods have their merits. The direct approach is good to test more bare library and how well the client handles it. The bytecode approach gives more real-life results, including opcodes interpretation and internal state management. 
+
+For the comparison between clients, we chose to use the bytecode approach. This guarantees that exactly the same bytecode has been used. For this reason, we recommend that bytecode benchmark results are used for any future mainnet gas pricing amendments.
 
 Please see [the specification](spec.md) for the details of how the benchmarks were executed.
 
