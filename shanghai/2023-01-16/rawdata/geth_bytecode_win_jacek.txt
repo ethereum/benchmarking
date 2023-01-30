@@ -1,0 +1,21 @@
+go test -bench BenchmarkBytecode
+goos: windows
+goarch: amd64
+pkg: github.com/ethereum/go-ethereum/core/vm/runtime
+cpu: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+BenchmarkBytecodePrecompile/EcRecover/ValidKey-16                  17696             70610 ns/op              3000 nominalGas/op            7818 B/op         79 allocs/op
+BenchmarkBytecodePrecompile/Bn256Add/Bn256Add-Valid-16             43341             25702 ns/op               150.0 nominalGas/op          7833 B/op         88 allocs/op
+BenchmarkBytecodePrecompile/Bn256Mul/Bn256Mul-Valid-16             12679             94660 ns/op              6000 nominalGas/op            8503 B/op        100 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-1-16                   859           1386028 ns/op             79000 nominalGas/op           62865 B/op        574 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-2-16                   576           2133691 ns/op            113000 nominalGas/op          112578 B/op       1053 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-4-16                   333           3573289 ns/op            181000 nominalGas/op          211840 B/op       2009 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-8-16                   184           6292710 ns/op            317000 nominalGas/op          411862 B/op       3917 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/pointEvaluation1-16             1092           1023690 ns/op             50000 nominalGas/op           62386 B/op        425 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/fuzzcorp-33-16                  6312            168642 ns/op             50000 nominalGas/op           27414 B/op        216 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/fuzzcorp-95-16                  6984            169987 ns/op             50000 nominalGas/op           27418 B/op        216 allocs/op
+BenchmarkBytecodePrecompile/Sha256/scalar_128-16                           87909             13660 ns/op               108.0 nominalGas/op          7047 B/op         73 allocs/op
+BenchmarkBytecodePrecompile/Sha256/scalar_256-16                           71073             15498 ns/op               156.0 nominalGas/op          7658 B/op         74 allocs/op
+BenchmarkBytecodePrecompile/RipeMd/scalar_128-16                           81492             13937 ns/op              1080 nominalGas/op            7136 B/op         74 allocs/op
+BenchmarkBytecodePrecompile/RipeMd/scalar_256-16                           77992             16455 ns/op              1560 nominalGas/op            7682 B/op         75 allocs/op
+PASS
+ok      github.com/ethereum/go-ethereum/core/vm/runtime 34.496s

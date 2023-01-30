@@ -4,10 +4,9 @@ All executions were done on appropriate 4844 branches.
 
 ## Geth
 
-- Branch: [https://github.com/imapp-pl/go-ethereum/tree/eip-4844](https://github.com/imapp-pl/go-ethereum/tree/eip-4844), based on [https://github.com/mdehoog/go-ethereum/tree/eip-4844](https://github.com/mdehoog/go-ethereum/tree/eip-4844)
+- Branch: [eip-4844](https://github.com/imapp-pl/go-ethereum/tree/eip-4844)
 - Commit: [2c3d1be](https://github.com/imapp-pl/go-ethereum/commit/2c3d1be5d6e7381b5c0b33a989a183b2fffb5b8c)
-- kzg package: 	github.com/protolambda/go-kzg v0.0.0-20221129234330-612948a21fb0
-- kzg commit: [5a63dd2](https://github.com/protolambda/go-kzg/commit/5a63dd26efb2ce99c807adb24a1aa9fe737e1a0c) 12 Dec 2022
+- go-kzg: [5a63dd2](https://github.com/protolambda/go-kzg/commit/5a63dd26efb2ce99c807adb24a1aa9fe737e1a0c) 12 Dec 2022
 
 The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
 
@@ -20,43 +19,15 @@ go test -bench=BenchmarkPrecompiled
 Bytecode
 ```
 cd core/vm/runtime
-go test -bench=BenchmarkBytecodePrecompile -count=10 > bench.txt
-benchstat bench.txt
+go test -bench=BenchmarkBytecodePrecompiled
 ```
-
-The `benchstat` package was used to calculate variance
-
-## Geth Gnark
-
-- Branch: [https://github.com/imapp-pl/go-ethereum/tree/eip-4844-gnark](https://github.com/imapp-pl/go-ethereum/tree/eip-4844-gnark), based on [https://github.com/mdehoog/go-ethereum/tree/eip-4844](https://github.com/mdehoog/go-ethereum/tree/eip-4844)
-- Commit: [3e8d13](https://github.com/imapp-pl/go-ethereum/commit/3e8d13caef4cec95b01525622d9548b1666c6589)
-- kzg package: 	github.com/crate-crypto/go-proto-danksharding-crypto v0.0.0-20230129134241-3c32d44a8467
-- kzg commit: [5a63dd2](https://github.com/crate-crypto/go-proto-danksharding-crypto/commit/3c32d44a8467773d62f142473d0b44c1fca679f0) 29 Jan 2023
-- gnark package:  github.com/consensys/gnark-crypto v0.8.0
-
-The [Go testing](https://pkg.go.dev/testing) package was used to get the benchmarks.
-
-Direct
-```
-cd core/vm
-go test -bench=BenchmarkPrecompiled
-```
-
-Bytecode
-```
-cd core/vm/runtime
-go test -bench=BenchmarkBytecodePrecompile -count=10 > bench.txt
-benchstat bench.txt
-```
-
-The `benchstat` package was used to calculate variance
 
 ## Nethermind
 
 - Branch: [precompile_benchmarks](https://github.com/imapp-pl/nethermind/tree/precompile_benchmarks)
 - Commit: [2ba5ccc](https://github.com/imapp-pl/nethermind/commit/2ba5ccc99497d411d38ed86ca0dafd8af6a726d4)
 - Ckzg.Bindings: 0.1.1.57
-- c-kzg commit: [13f2a79](https://github.com/ethereum/c-kzg-4844/commit/13f2a79345cb8739c899253c6b0771f7e875f061) 25 Dec 2022
+- c-kzg: [13f2a79](https://github.com/ethereum/c-kzg-4844/commit/13f2a79345cb8739c899253c6b0771f7e875f061) 25 Dec 2022
 
 
 [BenchmarkDotNet](https://benchmarkdotnet.org/articles/overview.html) was used to get the benchmarks.
