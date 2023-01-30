@@ -1,0 +1,42 @@
+EcRecover - ValidKey
+{"gasUser":"0xc62","timens":255513,"time":255,"gasTotal":"0xc62","output":"0x"}
+
+Bn256Add-Valid
+{"gasUser":"0x140","timens":110211,"time":110,"gasTotal":"0x140","output":"0x"}
+
+Bn256Mul-Valid
+{"gasUser":"0x180e","timens":187487,"time":187,"gasTotal":"0x180e","output":"0x"}
+
+Bn256Pairing-1
+{"gasUser":"0x1355a","timens":1389150,"time":1389,"gasTotal":"0x1355a","output":"0x"}
+
+Bn256Pairing-2
+{"gasUser":"0x1ba72","timens":1936933,"time":1936,"gasTotal":"0x1ba72","output":"0x"}
+
+Bn256Pairing-4
+{"gasUser":"0x2c4a3","timens":3081944,"time":3081,"gasTotal":"0x2c4a3","output":"0x"}
+
+Bn256Pairing-8
+{"gasUser":"0x4d906","timens":5493774,"time":5493,"gasTotal":"0x4d906","output":"0x"}
+
+pointEvaluation1
+{"gasUser":"0xcdd6","timens":1056739,"time":1056,"gasTotal":"0xcdd6","output":"0x"}
+
+PointEvaluation fuzzcorp-33
+{"gasUser":"0xcdd6","timens":1670175,"time":1670,"gasTotal":"0xcdd6","output":"0x"}
+
+PointEvaluation fuzzcorp-95
+{"gasUser":"0xcdd6","timens":1629470,"time":1629,"gasTotal":"0xcdd6","output":"0x"}
+
+Sha256 scalar_128
+{"gasUser":"0x116","timens":127921,"time":127,"gasTotal":"0x116","output":"0x"}
+
+Sha256 scalar_256
+{"gasUser":"0x176","timens":113927,"time":113,"gasTotal":"0x176","output":"0x"}
+
+RipeMd scalar_128
+{"gasUser":"0x37a","timens":150690,"time":150,"gasTotal":"0x37a","output":"0x"}
+
+RipeMd scalar_256
+{"gasUser":"0x6f2","timens":210298,"time":210,"gasTotal":"0x6f2","output":"0x"}
+

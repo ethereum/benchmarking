@@ -1,0 +1,20 @@
+goos: windows
+goarch: amd64
+pkg: github.com/ledgerwatch/erigon/core/vm/runtime        
+cpu: 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+BenchmarkBytecodePrecompile/EcRecover/ValidKey-16                  14862             77027 ns/op              3000 nominalGas/op            4884 B/op         80 allocs/op
+BenchmarkBytecodePrecompile/Bn256Add/Bn256Add-Valid-16             39734             30550 ns/op               150.0 nominalGas/op          5584 B/op         92 allocs/op
+BenchmarkBytecodePrecompile/Bn256Mul/Bn256Mul-Valid-16             10000            135819 ns/op              6000 nominalGas/op            6216 B/op        104 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-1-16                   666           1661813 ns/op             79000 nominalGas/op           60314 B/op        578 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-2-16                   417           2731387 ns/op            113000 nominalGas/op          109967 B/op       1057 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-4-16                   266           4194409 ns/op            181000 nominalGas/op          209188 B/op       2012 allocs/op
+BenchmarkBytecodePrecompile/Bn256Pairing/Bn256Pairing-8-16                   140           8348450 ns/op            317000 nominalGas/op          409112 B/op       3920 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/pointEvaluation1-16              866           1293137 ns/op             50000 nominalGas/op           59885 B/op        429 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/fuzzcorp-33-16                  5290            205447 ns/op             50000 nominalGas/op           24743 B/op        219 allocs/op
+BenchmarkBytecodePrecompile/PointEvaluation/fuzzcorp-95-16                  5356            210143 ns/op             50000 nominalGas/op           24740 B/op        219 allocs/op
+BenchmarkBytecodePrecompile/Sha256/scalar_128-16                           68838             16919 ns/op               108.0 nominalGas/op          4714 B/op         77 allocs/op
+BenchmarkBytecodePrecompile/Sha256/scalar_256-16                           54631             18704 ns/op               156.0 nominalGas/op          5322 B/op         78 allocs/op
+BenchmarkBytecodePrecompile/RipeMd/scalar_128-16                           61813             16903 ns/op              1080 nominalGas/op            4867 B/op         78 allocs/op
+BenchmarkBytecodePrecompile/RipeMd/scalar_256-16                           55581             19706 ns/op              1560 nominalGas/op            5337 B/op         79 allocs/op
+PASS
+ok      github.com/ledgerwatch/erigon/core/vm/runtime   33.921s
